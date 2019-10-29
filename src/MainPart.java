@@ -1,10 +1,13 @@
 import javax.swing.*;
+import java.awt.*;
 
 public class MainPart extends JFrame {
     /**
      *
      */
     private static final long serialVersionUID = 1L;
+
+    // 初始化界面
     public  void init() {
         JPanel titlePanel = new JPanel();
         JLabel titleLabel = new JLabel("Personal Agency");
@@ -12,6 +15,7 @@ public class MainPart extends JFrame {
         this.add(titlePanel);
 
     }
+    // 构建界面
     public MainPart() {
         super("Personal Agency");
 
