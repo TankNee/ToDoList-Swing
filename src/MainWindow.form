@@ -7,40 +7,6 @@
     <properties/>
     <border type="none"/>
     <children>
-      <scrollpane id="2e4f">
-        <constraints border-constraint="Center"/>
-        <properties/>
-        <border type="none"/>
-        <children>
-          <grid id="a94b9" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
-            <constraints/>
-            <properties/>
-            <border type="none"/>
-            <children>
-              <component id="ccf25" class="javax.swing.JButton" binding="button5" default-binding="true">
-                <constraints/>
-                <properties>
-                  <text value="Button"/>
-                </properties>
-              </component>
-              <component id="48660" class="javax.swing.JButton" binding="button4" default-binding="true">
-                <constraints/>
-                <properties>
-                  <text value="Button"/>
-                </properties>
-              </component>
-              <component id="e8be3" class="javax.swing.JTextArea" binding="textArea1" default-binding="true">
-                <constraints/>
-                <properties>
-                  <columns value="20"/>
-                  <lineWrap value="true"/>
-                  <rows value="30"/>
-                </properties>
-              </component>
-            </children>
-          </grid>
-        </children>
-      </scrollpane>
       <grid id="939ff" layout-manager="BorderLayout" hgap="0" vgap="0">
         <constraints border-constraint="South"/>
         <properties/>
@@ -79,6 +45,17 @@
           </component>
         </children>
       </grid>
+      <scrollpane id="5fc33">
+        <constraints border-constraint="Center"/>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <component id="849ef" class="javax.swing.JList" binding="list1" default-binding="true">
+            <constraints/>
+            <properties/>
+          </component>
+        </children>
+      </scrollpane>
     </children>
   </grid>
 </form>

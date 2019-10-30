@@ -18,5 +18,12 @@ class ItemList{
     public void remove(Items i) {
         this.items.remove(i);
     }
-    
+
+    public ArrayList<Items> getItems() {
+        return items;
+    }
+
+    public void setItems(ArrayList<Items> items) {
+        this.items = items;
+    }
 }

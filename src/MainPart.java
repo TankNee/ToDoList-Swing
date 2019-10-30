@@ -1,6 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
+import java.util.ArrayList;
 
 public class MainPart extends JFrame {
     /**
@@ -16,17 +17,36 @@ public class MainPart extends JFrame {
         this.add(titlePanel);
 
 
-        Items shortItem = new ShortItem("item_name1", "item_note");
+        Items shortItem = new ShortItem("myname", "item_note");
         Items shortItem_2 = new ShortItem("item_name2", "item_note");
         Items shortItem_3 = new ShortItem("item_name3", "item_note");
+        Items shortItem_4 = new ShortItem("item_name4", "item_note");
+        Items shortItem_5 = new ShortItem("item_name5", "item_note");
+        ItemList itemList = new ItemList();
+        itemList.add(shortItem);
+        itemList.add(shortItem_2);
+        itemList.add(shortItem_3);
+        itemList.add(shortItem_4);
+        itemList.add(shortItem_5);
+        ShowComponent testComponent = new ShowComponent(itemList.getItems());
+        JScrollPane jScrollPane = new JScrollPane(testComponent);
+//        jScrollPane.add(testComponent);
+//        jScrollPane.add(new ItemMoudle(shortItem_2));
+//        jScrollPane.add(new ItemMoudle(shortItem_3));
+
+        this.add(jScrollPane,BorderLayout.CENTER);
+
+        JButton settingbtn = new JButton("Setting");
+        this.add(settingbtn, BorderLayout.NORTH);
+
+        JPanel bottompanel = new JPanel();
+        bottompanel.setLayout(new BorderLayout());
+        JButton Addbtn = new JButton("Add");
+        bottompanel.add(Addbtn, BorderLayout.EAST);
+        this.add(bottompanel, BorderLayout.SOUTH);
         this.setJMenuBar(new ProjectMenu());
         System.out.println(shortItem.getClass().toString().substring(6));
 
-
-        JScrollPane jScrollPane = new JScrollPane(new ItemMoudle(shortItem));
-        jScrollPane.add(new ItemMoudle(shortItem_2));
-        jScrollPane.add(new ItemMoudle(shortItem_3));
-        this.add(jScrollPane,BorderLayout.CENTER);
     }
 
     // 构建界面
