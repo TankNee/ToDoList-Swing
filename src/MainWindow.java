@@ -27,7 +27,6 @@ public class MainWindow {
     private JButton button3;
     private JButton button1;
     private JButton button2;
-    private JList list1;
 
     private void createUIComponents() {
 //        System.out.println("Test");

@@ -16,18 +16,19 @@ public class MainPart extends JFrame {
         titlePanel.add(titleLabel);
         this.add(titlePanel);
 
-
         Items shortItem = new ShortItem("myname", "item_note");
-        Items shortItem_2 = new ShortItem("item_name2", "item_note");
+        Items shortItem_2 = new ShortItem("item_name122", "item_note");
         Items shortItem_3 = new ShortItem("item_name3", "item_note");
         Items shortItem_4 = new ShortItem("item_name4", "item_note");
-        Items shortItem_5 = new ShortItem("item_name5", "item_note");
+        Items shortItem_5 = new ShortItem("item_name5123", "item_note123");
         ItemList itemList = new ItemList();
         itemList.add(shortItem);
         itemList.add(shortItem_2);
         itemList.add(shortItem_3);
         itemList.add(shortItem_4);
         itemList.add(shortItem_5);
+
+
         ShowComponent testComponent = new ShowComponent(itemList.getItems());
         JScrollPane jScrollPane = new JScrollPane(testComponent);
 //        jScrollPane.add(testComponent);

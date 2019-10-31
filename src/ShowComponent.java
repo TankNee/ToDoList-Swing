@@ -4,6 +4,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
+//必须是可滚动的控件才能实现在ScrollPanel里面滚动！
+//这个控件里存放任务条例
+//这个控件用于负责scrollpanel里的滚动。
 public class ShowComponent extends JPanel implements ActionListener, Scrollable {
     private ArrayList<Items> items = new ArrayList();
 
@@ -20,11 +23,14 @@ public class ShowComponent extends JPanel implements ActionListener, Scrollable 
     public ShowComponent(ArrayList<Items> items) {
 
         this.items = items;
-        setLayout(new GridLayout(this.items.size(), 1, 5, 300));
+        setLayout(new GridLayout(this.items.size(), 1, 5, 20));
         for (Items items1 : this.items) {
-            add(new JLabel(items1.getItem_name()));
-            add(new JLabel(items1.getItem_note()));
+//            add(new JLabel(items1.getItem_name()));
+//            add(new JLabel(items1.getItem_note()));
+            add(new ItemMoudle(items1));
+            add(new Label("-----------------------"));
         }
+
     }
 
     public ShowComponent() {
@@ -40,6 +46,7 @@ public class ShowComponent extends JPanel implements ActionListener, Scrollable 
         return null;
     }
 
+    //下面的方法用于实现鼠标滚动的距离
     @Override
     public int getScrollableUnitIncrement(Rectangle visibleRect, int orientation, int direction) {
         return 30;
