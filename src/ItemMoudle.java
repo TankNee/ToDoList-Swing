@@ -1,5 +1,4 @@
-import javax.swing.JLabel;
-import javax.swing.JPanel;
+import javax.swing.*;
 import javax.swing.border.EtchedBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -16,6 +15,7 @@ class ItemMoudle extends JPanel implements MouseListener {
     private String name;
     private String note;
     private String type;
+    private Items items;
     private JLabel nameLabel = new JLabel();
     private JLabel noteLabel = new JLabel();
     private JLabel typeLabel = new JLabel();
@@ -47,6 +47,7 @@ class ItemMoudle extends JPanel implements MouseListener {
     }
 
     public ItemMoudle(Items i) {
+        this.items = i;
         setLayout(new GridLayout(3, 1));
         this.name = i.getItem_name();
         this.note = i.getItem_note();
@@ -82,6 +83,14 @@ class ItemMoudle extends JPanel implements MouseListener {
         System.out.println("Succeed" + this.name);
         this.name = "You Click here! " + e.getClickCount();
         this.nameLabel.setText(this.name);
+        JFrame jFrame = (JFrame) this.getRootPane().getParent();
+        ItemDialog itemDialog = new ItemDialog(jFrame, items);
+
+//        JDialog jDialog = new JDialog();
+//        jDialog.setName(this.name);
+//        jDialog.setTitle(this.name);
+//        jDialog.setBounds(300,300,100,100);
+//        jDialog.setVisible(true);
 //        this.removeAll();
 //        InitMoudle();
 
