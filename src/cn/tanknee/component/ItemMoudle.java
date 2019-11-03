@@ -1,8 +1,11 @@
+package cn.tanknee.component;
+
+import cn.tanknee.component.ChangeAndDeleteDialog;
+import cn.tanknee.entity.Items;
+
 import javax.swing.*;
 import javax.swing.border.EtchedBorder;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
@@ -58,9 +61,6 @@ class ItemMoudle extends JPanel implements MouseListener {
         add(nameLabel);
         add(noteLabel);
         add(typeLabel);
-//        add(new JLabel(name));
-//        add(new JLabel(note));
-//        add(new JLabel(type));
         setSize(400, 160);
         setBorder(new EtchedBorder(EtchedBorder.RAISED));
         this.addMouseListener(this);
@@ -81,18 +81,9 @@ class ItemMoudle extends JPanel implements MouseListener {
     @Override
     public void mouseClicked(MouseEvent e) {
         System.out.println("Succeed" + this.name);
-        this.name = "You Click here! " + e.getClickCount();
-        this.nameLabel.setText(this.name);
         JFrame jFrame = (JFrame) this.getRootPane().getParent();
-        ItemDialog itemDialog = new ItemDialog(jFrame, items);
-
-//        JDialog jDialog = new JDialog();
-//        jDialog.setName(this.name);
-//        jDialog.setTitle(this.name);
-//        jDialog.setBounds(300,300,100,100);
-//        jDialog.setVisible(true);
-//        this.removeAll();
-//        InitMoudle();
+        ShowComponent showPanel = (ShowComponent) this.getParent();
+        ChangeAndDeleteDialog changeAndDeleteDialog = new ChangeAndDeleteDialog(jFrame, "Task", this.items, showPanel);
 
     }
 

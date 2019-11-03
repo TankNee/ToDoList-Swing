@@ -1,7 +1,14 @@
+package cn.tanknee.main;
+
+import cn.tanknee.component.AddDialog;
+import cn.tanknee.component.ProjectMenu;
+import cn.tanknee.component.ShowComponent;
+import cn.tanknee.entity.*;
+import cn.tanknee.entity.Items;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.util.ArrayList;
 
 public class MainPart extends JFrame {
     /**
@@ -29,44 +36,40 @@ public class MainPart extends JFrame {
         itemList.add(shortItem_5);
 
         // 滚动列表的展示模块
-        ShowComponent testComponent = new ShowComponent(itemList.getItems());
-        JScrollPane jScrollPane = new JScrollPane(testComponent);
+        ShowComponent ScrollComponent = new ShowComponent(itemList.getItems());
+        JScrollPane jScrollPane = new JScrollPane(ScrollComponent);
         this.add(jScrollPane,BorderLayout.CENTER);
-
         JButton settingbtn = new JButton("Setting");
         this.add(settingbtn, BorderLayout.NORTH);
+        settingbtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ScrollComponent.removeAll();
+            }
+        });
+
         // 底部的面板容器
         JPanel bottompanel = new JPanel();
         bottompanel.setLayout(new BorderLayout());
+
         // 添加按钮
         JButton Addbtn = new JButton("Add");
-        JFrame that = this;
+
         bottompanel.add(Addbtn, BorderLayout.EAST);
         this.add(bottompanel, BorderLayout.SOUTH);
         // 顶部的菜单
         this.setJMenuBar(new ProjectMenu());
         System.out.println(shortItem.getClass().toString().substring(6));
+        // 传入主界面的指针
+        JFrame that = this;
         Addbtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 System.out.println("H");
                 Items items = new CycleItem("test", "test");
-                AddDialog addDialog = new AddDialog(that, "添加", items);
-//                ItemDialog itemDialog = new ItemDialog(that,items);
-//                Dialog dialog = new Dialog(that,"Hello",false);
-//                dialog.setLocationRelativeTo(null);
-//                dialog.setSize(500,200);
-//                dialog.setVisible(true);
+                AddDialog addDialog = new AddDialog(that, "添加", items, ScrollComponent);
             }
         });
-//        Addbtn.addMouseListener(new MouseAdapter() {
-//            @Override
-//            public void mouseClicked(MouseEvent e) {
-//                super.mouseClicked(e);
-//                AddDialog addDialog =new AddDialog(that,"添加新任务",true);
-////                Dialog =
-//            }
-//        });
     }
 
     // 构建界面
@@ -81,7 +84,7 @@ public class MainPart extends JFrame {
         this.setVisible(true);
 
     }
-    
+
 
     public static void main(String[] args) {
 

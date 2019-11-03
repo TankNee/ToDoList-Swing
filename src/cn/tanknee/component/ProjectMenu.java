@@ -1,8 +1,10 @@
+package cn.tanknee.component;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
 
-class ProjectMenu extends JMenuBar {
+public class ProjectMenu extends JMenuBar {
     /**
      *
      */
@@ -13,6 +15,7 @@ class ProjectMenu extends JMenuBar {
         add(createFileMenu());
         setVisible(true);
     }
+
     private JMenu createFileMenu(){
         JMenu fileMenu = new JMenu("FILE");
         fileMenu.setMnemonic(KeyEvent.VK_F);
