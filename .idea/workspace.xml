@@ -2,19 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="795dc6ab-3400-4734-833b-a6bcd9420cee" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/mysql_mysql_connector_java_5_1_48.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/cn/tanknee/java/pa/utils/DatabaseUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cn/tanknee/component/AddDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/tanknee/java/pa/component/AddDialog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cn/tanknee/component/ChangeAndDeleteDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/tanknee/java/pa/component/ChangeAndDeleteDialog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cn/tanknee/component/ItemDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/tanknee/java/pa/component/ItemDialog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cn/tanknee/component/ItemMoudle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/tanknee/java/pa/component/ItemMoudle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cn/tanknee/component/ProjectMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/tanknee/java/pa/component/ProjectMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cn/tanknee/component/ShowComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/tanknee/java/pa/component/ShowComponent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cn/tanknee/entity/CycleItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/tanknee/java/pa/entity/CycleItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cn/tanknee/entity/ItemList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/tanknee/java/pa/entity/ItemList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cn/tanknee/entity/Items.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/tanknee/java/pa/entity/Items.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cn/tanknee/entity/LongTimeItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/tanknee/java/pa/entity/LongTimeItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cn/tanknee/entity/ShortItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/tanknee/java/pa/entity/ShortItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cn/tanknee/main/MainPart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/tanknee/java/pa/main/MainPart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/personalagency.iml" beforeDir="false" afterPath="$PROJECT_DIR$/personalagency.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cn/tanknee/java/pa/component/ShowComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/tanknee/java/pa/component/ShowComponent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cn/tanknee/java/pa/entity/LongTimeItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/tanknee/java/pa/entity/LongTimeItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cn/tanknee/java/pa/entity/ShortItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/tanknee/java/pa/entity/ShortItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cn/tanknee/java/pa/main/MainPart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/tanknee/java/pa/main/MainPart.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -58,21 +55,25 @@
   </component>
   <component name="ProjectId" id="1SraFswWPjHqeueJ1NWRHpi9wjI" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="1" id="Add" />
+    <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="Downloaded.Files.Path.Enabled" value="true" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH" value="237" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Confirmation" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -105,6 +106,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SqlTest" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="cn.tanknee.java.pa.utils.DatabaseUtils" />
+      <module name="personalagency" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="runner" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="cn.tanknee.java.pa.main.MainPart" />
       <module name="personalagency" />
@@ -114,6 +122,7 @@
     </configuration>
     <list>
       <item itemvalue="Application.runner" />
+      <item itemvalue="Application.SqlTest" />
       <item itemvalue="Application.MainWindow" />
     </list>
     <recent_temporary>
@@ -126,7 +135,17 @@
     <option name="allServicesViewState">
       <serviceView>
         <treeState>
-          <expand />
+          <expand>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@3d09f9ea" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+            </path>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@3d09f9ea" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@54d88e24" type="9fbbdea:ServiceModel$ServiceNode" />
+            </path>
+          </expand>
           <select />
         </treeState>
       </serviceView>
@@ -150,7 +169,8 @@
       <workItem from="1572598154838" duration="4077000" />
       <workItem from="1572616240732" duration="11724000" />
       <workItem from="1572776842907" duration="314000" />
-      <workItem from="1572777220766" duration="6821000" />
+      <workItem from="1572777220766" duration="12960000" />
+      <workItem from="1572795433198" duration="1171000" />
     </task>
     <task id="LOCAL-00001" summary="实现了显示的条例的功能，下一步是画出整个的设计图例。先做好设计。">
       <created>1572449592820</created>
@@ -187,7 +207,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572774186442</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="V1.0.1&#10;添加了几个包，整理了一下&#10;增加了列表切换的功能">
+      <created>1572786414154</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1572786414155</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -212,11 +239,13 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="实现了显示的条例的功能，下一步是画出整个的设计图例。先做好设计。" />
     <MESSAGE value="完成了任务条例的展示以及点击事件，并且以及可以获取当前点击的条例的信息，以及可以修改当前条例的信息，下一步是实现添加，还有在dialog内更改！" />
     <MESSAGE value="添加了按钮事件" />
     <MESSAGE value="V1.0.0&#10;完成增删改三个基本功能，接下来开始实现高级功能。&#10;同时完成各个类的整理，完成度逐渐提高" />
-    <option name="LAST_COMMIT_MESSAGE" value="V1.0.0&#10;完成增删改三个基本功能，接下来开始实现高级功能。&#10;同时完成各个类的整理，完成度逐渐提高" />
+    <MESSAGE value="V1.0.1&#10;添加了几个包，整理了一下&#10;增加了列表切换的功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="V1.0.1&#10;添加了几个包，整理了一下&#10;增加了列表切换的功能" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -224,7 +253,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/cn/tanknee/java/pa/component/ProjectMenu.java</url>
-          <line>39</line>
+          <line>41</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>

@@ -2,6 +2,7 @@ package cn.tanknee.java.pa.component;
 
 import cn.tanknee.java.pa.entity.ItemList;
 import cn.tanknee.java.pa.entity.Items;
+import cn.tanknee.java.pa.utils.DatabaseUtils;
 
 import javax.swing.*;
 import java.awt.*;
@@ -80,8 +81,15 @@ public class ShowComponent extends JPanel implements ActionListener, Scrollable 
         for (Items items1 : this.currentlist.getItems()) {
             add(new ItemMoudle(items1));
         }
+        DatabaseUtils databaseUtils = new DatabaseUtils();
+        databaseUtils.saveToDatabase(itemList);
     }
 
+    /**
+     * 添加新的条例
+     *
+     * @param newitems
+     */
     public void addNewItem(Items newitems) {
 
         this.currentlist.getItems().add(newitems);
@@ -89,6 +97,10 @@ public class ShowComponent extends JPanel implements ActionListener, Scrollable 
         repaint();
     }
 
+    /**
+     * 添加一组新的条例到当前列表
+     * @param itemList
+     */
     public void addNewItem(ItemList itemList) {
         // 添加一组条例
         for (Items i : itemList.getItems()) {

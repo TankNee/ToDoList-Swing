@@ -22,7 +22,7 @@ public class MainPart extends JFrame {
         titlePanel.add(titleLabel);
         this.add(titlePanel);
         // 测试数据
-        Items shortItem = new ShortItem("myname", "item_note");
+        Items shortItem = new ShortItem("Myname", "item_note");
         Items shortItem_2 = new ShortItem("item_name122", "item_note");
         Items shortItem_3 = new LongTimeItem("item_name3", "item_note");
         Items shortItem_4 = new ShortItem("item_name4", "item_note");
