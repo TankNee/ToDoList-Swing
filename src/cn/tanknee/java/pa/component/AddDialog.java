@@ -1,12 +1,10 @@
-package cn.tanknee.component;
+package cn.tanknee.java.pa.component;
 
-import cn.tanknee.entity.CycleItem;
-import cn.tanknee.entity.Items;
-import cn.tanknee.entity.LongTimeItem;
-import cn.tanknee.entity.ShortItem;
+import cn.tanknee.java.pa.entity.Items;
+import cn.tanknee.java.pa.entity.*;
+import cn.tanknee.java.pa.entity.ShortItem;
 
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.HashMap;
@@ -21,19 +19,19 @@ public class AddDialog extends ItemDialog {
     public AddDialog(JFrame jf, String title, Items items, ShowComponent showComponent) {
         super(jf, title, items);
         JDialog that = this;
-        //存放条例类型的散列表
+        // 存放条例类型的散列表
         Map<String, Integer> map = new HashMap<>();
         map.put("LongTimeItem", 0);
         map.put("ShortItem", 1);
         map.put("CycleItem", 2);
 
-        //下拉框
+        // 下拉框
         String[] al = {"长期任务", "短期任务", "周期任务"};
         JComboBox<String> jComboBox = new JComboBox<>(al);
         this.add(jComboBox);
         jComboBox.setBounds(100, 10, 200, 20);
 
-        //标签
+        // 标签
         JLabel item_model = new JLabel("任务类型");
         item_model.setBounds(10, 10, 80, 20);
         JLabel item_name = new JLabel("任务名称");
@@ -43,7 +41,7 @@ public class AddDialog extends ItemDialog {
         JLabel item_deadline = new JLabel("任务日期");
         item_deadline.setBounds(10, 100, 80, 20);
 
-        //文本输入框
+        // 文本输入框
         JTextField input_name = new JTextField();
         input_name.setBounds(100, item_name.getY(), 200, 20);
         JTextField input_note = new JTextField();
@@ -71,7 +69,8 @@ public class AddDialog extends ItemDialog {
                     default:
                         break;
                 }
-                System.out.println(items1.getClass().toString().substring(6) + input_name.getText() + input_note.getText() + input_deadline.getText());
+                System.out.println(items1.getClass().toString().substring(6) + input_name.getText()
+                        + input_note.getText() + input_deadline.getText());
                 items1.setItem_name(input_name.getText());
                 items1.setItem_note(input_note.getText());
                 items1.setItem_deadline(input_deadline.getText());

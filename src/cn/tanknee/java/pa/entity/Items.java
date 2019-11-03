@@ -1,4 +1,4 @@
-package cn.tanknee.entity;
+package cn.tanknee.java.pa.entity;
 
 public class Items implements Comparable<Items> {
     //条例名称
@@ -7,6 +7,8 @@ public class Items implements Comparable<Items> {
     private String item_note;
     // 顺序ID用于比较大小
     private int id;
+	// 截止日期
+	private String item_deadline = "00000";
 
 	public String getItem_deadline() {
 		return item_deadline;
@@ -16,9 +18,8 @@ public class Items implements Comparable<Items> {
 		this.item_deadline = item_deadline;
 	}
 
-	private String item_deadline;
-    
-    public Items(String item_name, String item_note, int id) {
+
+	public Items(String item_name, String item_note, int id) {
 		this.item_name = item_name;
 		this.item_note = item_note;
 		this.id = id;

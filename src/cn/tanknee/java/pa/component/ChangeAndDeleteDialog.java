@@ -1,7 +1,6 @@
-package cn.tanknee.component;
+package cn.tanknee.java.pa.component;
 
-import cn.tanknee.entity.Items;
-
+import cn.tanknee.java.pa.entity.*;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

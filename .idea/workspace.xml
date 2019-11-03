@@ -1,22 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="795dc6ab-3400-4734-833b-a6bcd9420cee" name="Default Changelist" comment="添加了按钮事件">
-      <change afterPath="$PROJECT_DIR$/src/cn/tanknee/component/AddDialog.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/cn/tanknee/component/ItemDialog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+    <list default="true" id="795dc6ab-3400-4734-833b-a6bcd9420cee" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AddDialog.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CycleItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/tanknee/entity/CycleItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ItemDialog.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ItemList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/tanknee/entity/ItemList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ItemMoudle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/tanknee/component/ItemMoudle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Items.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/tanknee/entity/Items.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LongTimeItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/tanknee/entity/LongTimeItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MainPart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/tanknee/main/MainPart.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ProjectMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/tanknee/component/ProjectMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ShortItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/tanknee/entity/ShortItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ShowComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/tanknee/component/ShowComponent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cn/tanknee/component/AddDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/tanknee/java/pa/component/AddDialog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cn/tanknee/component/ChangeAndDeleteDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/tanknee/java/pa/component/ChangeAndDeleteDialog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cn/tanknee/component/ItemDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/tanknee/java/pa/component/ItemDialog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cn/tanknee/component/ItemMoudle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/tanknee/java/pa/component/ItemMoudle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cn/tanknee/component/ProjectMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/tanknee/java/pa/component/ProjectMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cn/tanknee/component/ShowComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/tanknee/java/pa/component/ShowComponent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cn/tanknee/entity/CycleItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/tanknee/java/pa/entity/CycleItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cn/tanknee/entity/ItemList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/tanknee/java/pa/entity/ItemList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cn/tanknee/entity/Items.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/tanknee/java/pa/entity/Items.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cn/tanknee/entity/LongTimeItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/tanknee/java/pa/entity/LongTimeItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cn/tanknee/entity/ShortItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/tanknee/java/pa/entity/ShortItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cn/tanknee/main/MainPart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/tanknee/java/pa/main/MainPart.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -69,7 +67,7 @@
     <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH" value="237" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="F:/Document/Tencent Files/498979540/FileRecv/hust (1)" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -77,6 +75,11 @@
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="cn.tanknee.java.pa" />
+      <recent name="cn.tanknee.java" />
+      <recent name="cn.tanknee" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\huaweicloud\personalagency\src" />
       <recent name="D:\huaweicloud\personalagency\src\cn\tanknee\peasonalagency" />
@@ -103,7 +106,7 @@
       </method>
     </configuration>
     <configuration name="runner" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="cn.tanknee.main.MainPart" />
+      <option name="MAIN_CLASS_NAME" value="cn.tanknee.java.pa.main.MainPart" />
       <module name="personalagency" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -145,7 +148,9 @@
       <workItem from="1572525526037" duration="10247000" />
       <workItem from="1572576362312" duration="3771000" />
       <workItem from="1572598154838" duration="4077000" />
-      <workItem from="1572616240732" duration="10175000" />
+      <workItem from="1572616240732" duration="11724000" />
+      <workItem from="1572776842907" duration="314000" />
+      <workItem from="1572777220766" duration="6821000" />
     </task>
     <task id="LOCAL-00001" summary="实现了显示的条例的功能，下一步是画出整个的设计图例。先做好设计。">
       <created>1572449592820</created>
@@ -168,7 +173,21 @@
       <option name="project" value="LOCAL" />
       <updated>1572601405367</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="V1.0.0&#10;完成增删改三个基本功能，接下来开始实现高级功能。&#10;同时完成各个类的整理，完成度逐渐提高">
+      <created>1572774156573</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1572774156573</updated>
+    </task>
+    <task id="LOCAL-00005" summary="V1.0.0&#10;完成增删改三个基本功能，接下来开始实现高级功能。&#10;同时完成各个类的整理，完成度逐渐提高">
+      <created>1572774186442</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1572774186442</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -177,6 +196,11 @@
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
+        <entry key="1">
+          <value>
+            <State />
+          </value>
+        </entry>
         <entry key="MAIN">
           <value>
             <State>
@@ -191,8 +215,20 @@
     <MESSAGE value="实现了显示的条例的功能，下一步是画出整个的设计图例。先做好设计。" />
     <MESSAGE value="完成了任务条例的展示以及点击事件，并且以及可以获取当前点击的条例的信息，以及可以修改当前条例的信息，下一步是实现添加，还有在dialog内更改！" />
     <MESSAGE value="添加了按钮事件" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加了按钮事件" />
+    <MESSAGE value="V1.0.0&#10;完成增删改三个基本功能，接下来开始实现高级功能。&#10;同时完成各个类的整理，完成度逐渐提高" />
+    <option name="LAST_COMMIT_MESSAGE" value="V1.0.0&#10;完成增删改三个基本功能，接下来开始实现高级功能。&#10;同时完成各个类的整理，完成度逐渐提高" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/cn/tanknee/java/pa/component/ProjectMenu.java</url>
+          <line>39</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/personalagency$runner.ic" NAME="runner Coverage Results" MODIFIED="1572525341338" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

@@ -1,7 +1,6 @@
-package cn.tanknee.component;
+package cn.tanknee.java.pa.component;
 
-import cn.tanknee.component.ChangeAndDeleteDialog;
-import cn.tanknee.entity.Items;
+import cn.tanknee.java.pa.entity.*;
 
 import javax.swing.*;
 import javax.swing.border.EtchedBorder;
@@ -9,7 +8,7 @@ import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
-class ItemMoudle extends JPanel implements MouseListener {
+public class ItemMoudle extends JPanel implements MouseListener {
     /**
      *
      */

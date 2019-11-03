@@ -1,4 +1,4 @@
-package cn.tanknee.entity;
+package cn.tanknee.java.pa.entity;
 
 public class ShortItem extends Items {
     private String deadLine;
