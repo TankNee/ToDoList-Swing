@@ -19,14 +19,6 @@ public class CycleItem extends Items {
         this.classindex = classindex;
     }
 
-    public String getClassname() {
-        return classname;
-    }
-
-    public void setClassname(String classname) {
-        this.classname = classname;
-    }
-
     public CycleItem(String item_name, String item_note, int id) {
         super(item_name, item_note, id);
     }

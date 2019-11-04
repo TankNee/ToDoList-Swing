@@ -1,5 +1,8 @@
 package cn.tanknee.java.pa.entity;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -11,29 +14,37 @@ public class Items implements Comparable<Items> {
 	// 数据库ID
     private int id;
 	// 截止日期
-	private String item_deadline = "00000";
+	private String item_deadline = "19-11-05";
+	// 日期的形式
+	private SimpleDateFormat sdf = new SimpleDateFormat("yy-MM-dd");
+	// 截止日期的Date表示形式
+	private Date item_deadline_date = null;
 	// 类名序号
 	private Integer classindex;
 
-	public String getItem_deadline() {
-		return item_deadline;
-	}
-
-	public void setItem_deadline(String item_deadline) {
-		this.item_deadline = item_deadline;
-	}
-
+    
+	public Items(String item_name, String item_note) {
+		this.item_name = item_name;
+		this.item_note = item_note;
+		try {
+			item_deadline_date = sdf.parse(item_deadline);
+			System.out.println(item_deadline_date);
+		} catch (ParseException pe) {
+			pe.printStackTrace();
+		}
+    }
 
 	public Items(String item_name, String item_note, int id) {
 		this.item_name = item_name;
 		this.item_note = item_note;
 		this.id = id;
+		try {
+			item_deadline_date = sdf.parse(item_deadline);
+			System.out.println(item_deadline_date);
+		} catch (ParseException pe) {
+			pe.printStackTrace();
+		}
 	}
-    
-	public Items(String item_name, String item_note) {
-		this.item_name = item_name;
-		this.item_note = item_note;
-    }
 
 	public Items() {
 	}
@@ -42,6 +53,12 @@ public class Items implements Comparable<Items> {
 		this.item_name = item_name;
 		this.item_note = item_note;
 		this.item_deadline = item_deadline;
+		try {
+			item_deadline_date = sdf.parse(item_deadline);
+			System.out.println(item_deadline_date);
+		} catch (ParseException pe) {
+			pe.printStackTrace();
+		}
 	}
 
 	public int getClassIndex(String classname) {
@@ -63,6 +80,22 @@ public class Items implements Comparable<Items> {
 		String cn = this.getClass().toString();
 		String temp = cn.substring(cn.indexOf("entity.") + 7);
 		return temp;
+	}
+
+	public Date getItem_deadline_date() {
+		return item_deadline_date;
+	}
+
+	public void setItem_deadline_date(Date item_deadline_date) {
+		this.item_deadline_date = item_deadline_date;
+	}
+
+	public String getItem_deadline() {
+		return item_deadline;
+	}
+
+	public void setItem_deadline(String item_deadline) {
+		this.item_deadline = item_deadline;
 	}
 	@Override
     public int compareTo(Items i) {

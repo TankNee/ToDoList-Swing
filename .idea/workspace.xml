@@ -2,15 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="795dc6ab-3400-4734-833b-a6bcd9420cee" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/cn/tanknee/java/pa/component/DateField.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/cn/tanknee/java/pa/component/AddDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/tanknee/java/pa/component/AddDialog.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/cn/tanknee/java/pa/component/ChangeAndDeleteDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/tanknee/java/pa/component/ChangeAndDeleteDialog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cn/tanknee/java/pa/component/ProjectMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/tanknee/java/pa/component/ProjectMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cn/tanknee/java/pa/component/ShowComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/tanknee/java/pa/component/ShowComponent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cn/tanknee/java/pa/component/ItemDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/tanknee/java/pa/component/ItemDialog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cn/tanknee/java/pa/entity/CycleItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/tanknee/java/pa/entity/CycleItem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/cn/tanknee/java/pa/entity/Items.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/tanknee/java/pa/entity/Items.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cn/tanknee/java/pa/entity/LongTimeItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/tanknee/java/pa/entity/LongTimeItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cn/tanknee/java/pa/utils/DatabaseUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/tanknee/java/pa/utils/DatabaseUtils.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -170,7 +168,7 @@
       <workItem from="1572776842907" duration="314000" />
       <workItem from="1572777220766" duration="12960000" />
       <workItem from="1572795433198" duration="1171000" />
-      <workItem from="1572841230371" duration="17990000" />
+      <workItem from="1572841230371" duration="22637000" />
     </task>
     <task id="LOCAL-00001" summary="实现了显示的条例的功能，下一步是画出整个的设计图例。先做好设计。">
       <created>1572449592820</created>
@@ -221,7 +219,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572871371321</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="V1.0.2.5&#10;程序界面的所有操作都可以即时存储的数据库中">
+      <created>1572878610327</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1572878610327</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -253,7 +258,8 @@
     <MESSAGE value="V1.0.0&#10;完成增删改三个基本功能，接下来开始实现高级功能。&#10;同时完成各个类的整理，完成度逐渐提高" />
     <MESSAGE value="V1.0.1&#10;添加了几个包，整理了一下&#10;增加了列表切换的功能" />
     <MESSAGE value="V1.0.2&#10;添加了数据持久化的功能，并且可以读取数据库内的数据" />
-    <option name="LAST_COMMIT_MESSAGE" value="V1.0.2&#10;添加了数据持久化的功能，并且可以读取数据库内的数据" />
+    <MESSAGE value="V1.0.2.5&#10;程序界面的所有操作都可以即时存储的数据库中" />
+    <option name="LAST_COMMIT_MESSAGE" value="V1.0.2.5&#10;程序界面的所有操作都可以即时存储的数据库中" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -266,8 +272,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/cn/tanknee/java/pa/component/AddDialog.java</url>
-          <line>139</line>
+          <line>159</line>
           <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/cn/tanknee/java/pa/component/ChangeAndDeleteDialog.java</url>
+          <line>52</line>
+          <option name="timeStamp" value="13" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

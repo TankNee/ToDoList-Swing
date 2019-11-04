@@ -8,7 +8,7 @@ import java.awt.*;
 public class ItemDialog extends JDialog {
 
     public ItemDialog(JFrame jf, Items items) {
-        super(jf, items.getItem_name(), true);
+        super(jf, items.getItem_name());
         this.setLayout(null);
         this.setSize(500, 200);
         this.setResizable(false);
@@ -17,7 +17,7 @@ public class ItemDialog extends JDialog {
 
 
     public ItemDialog(JFrame jf, String title, Items items) {
-        super(jf, title, true);
+        super(jf, title);
         this.setLayout(null);
         this.setSize(500, 200);
         this.setResizable(false);

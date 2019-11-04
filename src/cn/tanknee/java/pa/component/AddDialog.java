@@ -21,6 +21,19 @@ import java.util.Map;
 public class AddDialog extends ItemDialog {
     private ShowComponent showComponent;
 
+
+    public AddDialog() {
+        super();
+    }
+
+    public AddDialog(ShowComponent showComponent) {
+        this.showComponent = showComponent;
+    }
+
+    public AddDialog(JFrame jf, String title) {
+        super(jf, title);
+    }
+
     public void AddItemDialog(JFrame jf, String title, Items items) {
 //        super(jf, title, items);
         JDialog that = this;
@@ -45,14 +58,28 @@ public class AddDialog extends ItemDialog {
         item_note.setBounds(10, 70, 80, 20);
         JLabel item_deadline = new JLabel("任务日期");
         item_deadline.setBounds(10, 100, 80, 20);
+        JLabel item_deadline_yaer = new JLabel("年");
+        item_deadline_yaer.setBounds(140, 100, 27, 20);
+        JLabel item_deadline_month = new JLabel("月");
+        item_deadline_month.setBounds(207, 100, 27, 20);
+        JLabel item_deadline_day = new JLabel("日");
+        item_deadline_day.setBounds(274, 100, 27, 20);
 
         // 文本输入框
         JTextField input_name = new JTextField();
         input_name.setBounds(100, item_name.getY(), 200, 20);
         JTextField input_note = new JTextField();
         input_note.setBounds(100, item_note.getY(), 200, 20);
-        JTextField input_deadline = new JTextField();
-        input_deadline.setBounds(100, item_deadline.getY(), 200, 20);
+        JTextField input_deadline_year = new JTextField();
+        input_deadline_year.setBounds(100, item_deadline.getY(), 40, 20);
+        JTextField input_deadline_month = new JTextField();
+        input_deadline_month.setBounds(167, item_deadline.getY(), 40, 20);
+        JTextField input_deadline_day = new JTextField();
+        input_deadline_day.setBounds(234, item_deadline.getY(), 40, 20);
+
+        // 日历组件
+        DateField dateField = new DateField();
+        dateField.setBounds(100, item_deadline.getY(), 200, 20);
 
         // 确认与取消按钮
         JButton confirm_btn = new JButton("Confirm");
@@ -75,10 +102,10 @@ public class AddDialog extends ItemDialog {
                         break;
                 }
                 System.out.println(items1.getClass().toString().substring(6) + input_name.getText()
-                        + input_note.getText() + input_deadline.getText());
+                        + input_note.getText() + input_deadline_year.getText() + "-" + input_deadline_month.getText() + "-" + input_deadline_day.getText());
                 items1.setItem_name(input_name.getText());
                 items1.setItem_note(input_note.getText());
-                items1.setItem_deadline(input_deadline.getText());
+                items1.setItem_deadline(input_deadline_year.getText() + "-" + input_deadline_month.getText() + "-" + input_deadline_day.getText());
                 showComponent.addNewItem(items1);
                 DatabaseUtils databaseUtils = new DatabaseUtils();
                 databaseUtils.saveToDatabase(items1, showComponent);
@@ -101,27 +128,20 @@ public class AddDialog extends ItemDialog {
         this.add(item_name);
         this.add(item_note);
         this.add(item_deadline);
+        this.add(item_deadline_yaer);
+        this.add(item_deadline_month);
+        this.add(item_deadline_day);
+
 
         this.add(input_name);
         this.add(input_note);
-        this.add(input_deadline);
+        this.add(input_deadline_year);
+        this.add(input_deadline_month);
+        this.add(input_deadline_day);
         this.add(confirm_btn);
         this.add(cancel_btn);
         this.setVisible(true);
     }
-
-    public AddDialog() {
-        super();
-    }
-
-    public AddDialog(ShowComponent showComponent) {
-        this.showComponent = showComponent;
-    }
-
-    public AddDialog(JFrame jf, String title) {
-        super(jf, title);
-    }
-
     public void AddListDialog(ShowComponent showComponent) {
         JDialog that = this;
         this.showComponent = showComponent;
@@ -158,6 +178,7 @@ public class AddDialog extends ItemDialog {
                 that.dispose();
             }
         });
+
         add(listName);
         add(jTextField);
         add(confirmBtn);
