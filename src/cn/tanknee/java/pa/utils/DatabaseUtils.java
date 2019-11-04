@@ -61,9 +61,6 @@ public class DatabaseUtils {
                 } else {
                     System.out.println("数据表已存在");
                 }
-                /**
-                 * TODO 此处还存在问题！
-                 */
                 for (Items i : itemList.getItems()) {
                     String savedata = "insert into " + itemList.getListname() + " values(NULL,?,?,?,?,?);";
                     PreparedStatement stmt = c.prepareStatement(savedata);
@@ -73,6 +70,7 @@ public class DatabaseUtils {
                     stmt.setString(4, i.getItem_deadline());
                     stmt.setString(5, i.getItem_name());
                     stmt.executeLargeUpdate();
+                    stmt.close();
                 }
                 statement.close();
             }
@@ -112,6 +110,7 @@ public class DatabaseUtils {
                 stmt.setString(5, i.getItem_name());
                 stmt.executeLargeUpdate();
                 statement.close();
+                stmt.close();
             }
             c.close();
         } catch (ClassNotFoundException | SQLException e) {
@@ -145,6 +144,11 @@ public class DatabaseUtils {
         return false;
     }
 
+    /**
+     * 从数据库中加载全部数据。
+     *
+     * @return
+     */
     public ArrayList<ItemList> readAllOfDatabase() {
         ArrayList<ItemList> listarray = new ArrayList<>();
         ArrayList<String> tablename = new ArrayList<>();
@@ -180,6 +184,8 @@ public class DatabaseUtils {
                     items.setItem_name(rs2.getString("name"));
                     items.setItem_note(rs2.getString("note"));
                     items.setItem_deadline(rs2.getString("deadline"));
+                    items.setId(rs2.getInt("id"));
+                    System.out.println(items.getId());
                     itemList.add(items);
                 }
                 listarray.add(itemList);
@@ -194,5 +200,43 @@ public class DatabaseUtils {
             e.printStackTrace();
         }
         return listarray;
+    }
+
+    /**
+     * 从数据库中的指定表中移除指定条例
+     *
+     * @param items
+     * @param tablename
+     */
+    public void removeItemFromDatabase(Items items, String tablename) {
+        try {
+            Class.forName(driver);
+            Connection c = DriverManager.getConnection(url, user, password);
+            String removesql = "delete from " + tablename + " where id = " + items.getId() + " ;";
+            System.out.println(removesql);
+            Statement statement = c.createStatement();
+            statement.execute(removesql);
+            c.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void changeItemFromDatabase(Items items, String tablename) {
+        try {
+            Class.forName(driver);
+            Connection c = DriverManager.getConnection(url, user, password);
+            String updatesql = "update  " + tablename + " set name =?, note=?, deadline=? where id = ?";
+            PreparedStatement stmt = c.prepareStatement(updatesql);
+            stmt.setString(1, items.getItem_name());
+            stmt.setString(2, items.getItem_note());
+            stmt.setString(3, items.getItem_deadline());
+            stmt.setInt(4, items.getId());
+            stmt.executeLargeUpdate();
+            stmt.close();
+            c.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

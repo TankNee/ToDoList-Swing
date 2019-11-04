@@ -29,7 +29,6 @@ public class LongTimeItem extends Items {
 
     public LongTimeItem(String item_name, String item_note) {
         super(item_name, item_note);
-        // TODO Auto-generated constructor stub
     }
 
     public LongTimeItem() {

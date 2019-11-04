@@ -19,6 +19,7 @@ public class ProjectMenu extends JMenuBar {
         this.showComponent = showComponent;
         add(createFileMenu());
         add(createListMenu());
+        add(createSortMenu());
         setVisible(true);
     }
 
@@ -82,10 +83,41 @@ public class ProjectMenu extends JMenuBar {
         return listMenu;
     }
 
+    /**
+     * 多种排序
+     *
+     * @return
+     */
+    private JMenu createSortMenu() {
+        JMenu sortMenu = new JMenu("SORT");
+        sortMenu.setMnemonic(KeyEvent.VK_S);
+
+        JMenu sortList = new JMenu("Sort List");
+        JMenuItem sortListByTime = new JMenuItem("Sort List By Time");
+        JMenuItem sortListByName = new JMenuItem("Sort List By Name");
+        sortList.add(sortListByTime);
+        sortList.add(sortListByName);
+
+        JMenu sortTask = new JMenu("Sort Task");
+        JMenuItem sortTaskByTime = new JMenuItem("Sort Task By Time");
+        JMenuItem sortTaskByName = new JMenuItem("Sort Task By Name");
+        JMenuItem sortTaskByCompletion = new JMenuItem("Sort Task By Completion");
+        sortTask.add(sortTaskByTime);
+        sortTask.add(sortTaskByName);
+        sortTask.add(sortTaskByCompletion);
+
+        sortMenu.add(sortList);
+        sortMenu.add(sortTask);
+        return sortMenu;
+    }
+
     public void refreshMenu() {
         removeAll();
         add(createFileMenu());
         add(createListMenu());
-        setVisible(true);
+        add(createSortMenu());
+        revalidate();
+        repaint();
+//        setVisible(true);
     }
 }

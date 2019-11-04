@@ -44,7 +44,8 @@ public class ChangeAndDeleteDialog extends ItemDialog {
                 items.setItem_name(input_name.getText());
                 items.setItem_note(input_note.getText());
                 items.setItem_deadline(input_deadline.getText());
-                showComponent.changeItem();
+                showComponent.changeItem(items);
+//                showComponent.refreshComponet();
                 jf.setVisible(true);
                 that.dispose();
             }

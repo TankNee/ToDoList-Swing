@@ -9,6 +9,7 @@ import cn.tanknee.java.pa.utils.MyStringUtils;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.DatabaseMetaData;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -122,6 +123,7 @@ public class AddDialog extends ItemDialog {
     }
 
     public void AddListDialog(ShowComponent showComponent) {
+        JDialog that = this;
         this.showComponent = showComponent;
         JLabel listName = new JLabel("List Name：");
         listName.setBounds(80, 30, 80, 20);
@@ -138,14 +140,14 @@ public class AddDialog extends ItemDialog {
                     ItemList itemList = new ItemList(jTextField.getText());
                     showComponent.getListarray().add(itemList);
                     showComponent.setCurrentlist(itemList);
+                    DatabaseUtils databaseUtils = new DatabaseUtils();
+                    databaseUtils.saveToDatabase(itemList);
                     dispose();
                     showComponent.refreshComponet();
                 } else {
                     System.out.println("不可以使用纯数字的名称");
                     dispose();
                 }
-
-
             }
         });
         JButton cancelBtn = new JButton("Cancel");
@@ -153,7 +155,7 @@ public class AddDialog extends ItemDialog {
         cancelBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                dispose();
+                that.dispose();
             }
         });
         add(listName);

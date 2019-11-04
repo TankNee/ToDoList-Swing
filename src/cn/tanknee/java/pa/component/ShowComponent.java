@@ -27,6 +27,7 @@ public class ShowComponent extends JPanel implements Scrollable {
      * 行间距
      */
     private int margin = 100;
+    private DatabaseUtils databaseUtils = new DatabaseUtils();
 
 
     public ArrayList<ItemList> getListarray() {
@@ -56,7 +57,6 @@ public class ShowComponent extends JPanel implements Scrollable {
 
 
     public ShowComponent() {
-        DatabaseUtils databaseUtils = new DatabaseUtils();
         this.listarray = databaseUtils.readAllOfDatabase();
         this.currentlist = this.listarray.get(0);
         setLayout(new GridLayout(this.currentlist.getItems().size(), 1, 0, this.margin));
@@ -82,7 +82,7 @@ public class ShowComponent extends JPanel implements Scrollable {
     }
 
     public ShowComponent(ItemList itemList) {
-        DatabaseUtils databaseUtils = new DatabaseUtils();
+
 //        this.listarray =  databaseUtils.readAllOfDatabase();
         this.listarray.add(itemList);
         this.currentlist = itemList;
@@ -119,16 +119,29 @@ public class ShowComponent extends JPanel implements Scrollable {
     }
 
     public void removeItem(Items items) {
-
         this.currentlist.getItems().remove(items);
+        databaseUtils.removeItemFromDatabase(items, this.currentlist.getListname());
         this.refreshComponet();
     }
 
-    public void changeItem() {
-        removeAll();
-        for (Items items1 : this.currentlist.getItems()) {
-            add(new ItemMoudle(items1));
-        }
+    public void changeItem(Items items) {
+        databaseUtils.changeItemFromDatabase(items, this.currentlist.getListname());
+//        removeAll();
+//        int index = 0;
+//        for(Items i:this.currentlist.getItems()){
+//            if(i.equals(items)){
+//                break;
+//            }
+//            index++;
+//        }
+        /**
+         * TODO 在这里实现修改任务排列位置的功能
+         * TODO 大体思路：获取目标位置的index，记住当前位置的index
+         * TODO 然后通过不断地交换来实现位置的转移，最后刷新整个容器界面
+         */
+//        this.currentlist.getItems().indexOf();
+//        this.currentlist.getItems().set(index,items);
+        refreshComponet();
     }
 
     public void addList(ItemList itemList) {
@@ -155,9 +168,6 @@ public class ShowComponent extends JPanel implements Scrollable {
         this.getParent().setVisible(true);
     }
 
-    public void readFromDatabase() {
-
-    }
 
 
 

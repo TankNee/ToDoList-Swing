@@ -8,7 +8,7 @@ public class Items implements Comparable<Items> {
     private String item_name;
     // 条例主要内容
     private String item_note;
-    // 顺序ID用于比较大小
+	// 数据库ID
     private int id;
 	// 截止日期
 	private String item_deadline = "00000";
