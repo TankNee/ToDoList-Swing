@@ -3,6 +3,8 @@ package cn.tanknee.java.pa.component;
 import cn.tanknee.java.pa.entity.Items;
 import cn.tanknee.java.pa.entity.*;
 import cn.tanknee.java.pa.entity.ShortItem;
+import cn.tanknee.java.pa.utils.DatabaseUtils;
+import cn.tanknee.java.pa.utils.MyStringUtils;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -16,8 +18,10 @@ import java.util.Map;
  * @Author : tanknee
  */
 public class AddDialog extends ItemDialog {
-    public AddDialog(JFrame jf, String title, Items items, ShowComponent showComponent) {
-        super(jf, title, items);
+    private ShowComponent showComponent;
+
+    public void AddItemDialog(JFrame jf, String title, Items items) {
+//        super(jf, title, items);
         JDialog that = this;
         // 存放条例类型的散列表
         Map<String, Integer> map = new HashMap<>();
@@ -75,6 +79,8 @@ public class AddDialog extends ItemDialog {
                 items1.setItem_note(input_note.getText());
                 items1.setItem_deadline(input_deadline.getText());
                 showComponent.addNewItem(items1);
+                DatabaseUtils databaseUtils = new DatabaseUtils();
+                databaseUtils.saveToDatabase(items1, showComponent);
                 jf.setVisible(true);
                 that.dispose();
             }
@@ -101,6 +107,59 @@ public class AddDialog extends ItemDialog {
         this.add(confirm_btn);
         this.add(cancel_btn);
         this.setVisible(true);
+    }
 
+    public AddDialog() {
+        super();
+    }
+
+    public AddDialog(ShowComponent showComponent) {
+        this.showComponent = showComponent;
+    }
+
+    public AddDialog(JFrame jf, String title) {
+        super(jf, title);
+    }
+
+    public void AddListDialog(ShowComponent showComponent) {
+        this.showComponent = showComponent;
+        JLabel listName = new JLabel("List Name：");
+        listName.setBounds(80, 30, 80, 20);
+        JTextField jTextField = new JTextField();
+        jTextField.setBounds(170, 30, 200, 20);
+
+
+        JButton confirmBtn = new JButton("Confirm");
+        confirmBtn.setBounds(80, 90, 130, 30);
+        confirmBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (!MyStringUtils.isNumber(jTextField.getText())) {
+                    ItemList itemList = new ItemList(jTextField.getText());
+                    showComponent.getListarray().add(itemList);
+                    showComponent.setCurrentlist(itemList);
+                    dispose();
+                    showComponent.refreshComponet();
+                } else {
+                    System.out.println("不可以使用纯数字的名称");
+                    dispose();
+                }
+
+
+            }
+        });
+        JButton cancelBtn = new JButton("Cancel");
+        cancelBtn.setBounds(240, 90, 130, 30);
+        cancelBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                dispose();
+            }
+        });
+        add(listName);
+        add(jTextField);
+        add(confirmBtn);
+        add(cancelBtn);
+        this.setVisible(true);
     }
 }

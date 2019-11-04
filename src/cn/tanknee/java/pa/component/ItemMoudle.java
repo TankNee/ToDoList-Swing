@@ -17,10 +17,12 @@ public class ItemMoudle extends JPanel implements MouseListener {
     private String name;
     private String note;
     private String type;
+    private String deadline;
     private Items items;
     private JLabel nameLabel = new JLabel();
     private JLabel noteLabel = new JLabel();
     private JLabel typeLabel = new JLabel();
+    private JLabel deadlineLabel = new JLabel();
 
     @Override
     public String getName() {
@@ -50,16 +52,19 @@ public class ItemMoudle extends JPanel implements MouseListener {
 
     public ItemMoudle(Items i) {
         this.items = i;
-        setLayout(new GridLayout(3, 1));
+        setLayout(new GridLayout(4, 1, 50, 50));
         this.name = i.getItem_name();
         this.note = i.getItem_note();
-        this.type = i.getClass().toString().substring(6);
-        nameLabel.setText(name);
-        noteLabel.setText(note);
-        typeLabel.setText(type);
+        this.type = i.getClassName();
+        this.deadline = i.getItem_deadline();
+        nameLabel.setText("Task Name:       " + name);
+        noteLabel.setText("Task Note:       " + note);
+        typeLabel.setText("Task Type:       " + type);
+        deadlineLabel.setText("Task Deadline:       " + deadline);
         add(nameLabel);
         add(noteLabel);
         add(typeLabel);
+        add(deadlineLabel);
         setSize(400, 160);
         setBorder(new EtchedBorder(EtchedBorder.RAISED));
         this.addMouseListener(this);
@@ -83,7 +88,6 @@ public class ItemMoudle extends JPanel implements MouseListener {
         JFrame jFrame = (JFrame) this.getRootPane().getParent();
         ShowComponent showPanel = (ShowComponent) this.getParent();
         ChangeAndDeleteDialog changeAndDeleteDialog = new ChangeAndDeleteDialog(jFrame, "Task", this.items, showPanel);
-
     }
 
     @Override

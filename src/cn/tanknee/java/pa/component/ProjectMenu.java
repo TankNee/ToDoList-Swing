@@ -25,9 +25,43 @@ public class ProjectMenu extends JMenuBar {
     private JMenu createFileMenu(){
         JMenu fileMenu = new JMenu("FILE");
         fileMenu.setMnemonic(KeyEvent.VK_F);
-        JMenuItem item=new JMenuItem("New",KeyEvent.VK_N);
-        item.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_N, ActionEvent.CTRL_MASK));
-        fileMenu.add(item);
+
+        /**
+         * 添加新的清单列表
+         */
+        JMenuItem addNewList = new JMenuItem("Add New List", KeyEvent.VK_A);
+        addNewList.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                AddDialog addDialog = new AddDialog();
+                addDialog.setTitle("Add A New List");
+                addDialog.AddListDialog(showComponent);
+                refreshMenu();
+            }
+        });
+        /**
+         * 打开外部文件并导入
+         */
+        JMenuItem openExternalSource = new JMenuItem("Open", KeyEvent.VK_O);
+        openExternalSource.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
+        /**
+         * 导出文件
+         */
+        JMenuItem exportSource = new JMenuItem("Export", KeyEvent.VK_E);
+        exportSource.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
+
+        fileMenu.add(addNewList);
+        fileMenu.add(openExternalSource);
         return fileMenu;
     }
 

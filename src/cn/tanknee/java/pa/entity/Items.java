@@ -1,5 +1,8 @@
 package cn.tanknee.java.pa.entity;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Items implements Comparable<Items> {
     //条例名称
     private String item_name;
@@ -9,6 +12,8 @@ public class Items implements Comparable<Items> {
     private int id;
 	// 截止日期
 	private String item_deadline = "00000";
+	// 类名序号
+	private Integer classindex;
 
 	public String getItem_deadline() {
 		return item_deadline;
@@ -39,6 +44,26 @@ public class Items implements Comparable<Items> {
 		this.item_deadline = item_deadline;
 	}
 
+	public int getClassIndex(String classname) {
+		Map<String, Integer> map = new HashMap();
+		ShortItem shortItem = new ShortItem();
+		LongTimeItem longTimeItem = new LongTimeItem();
+		CycleItem cycleItem = new CycleItem();
+		map.put(shortItem.getClass().toString(), 0);
+		map.put(longTimeItem.getClass().toString(), 1);
+		map.put(cycleItem.getClass().toString(), 2);
+		return map.get(classname);
+	}
+
+	public int getClassIndex() {
+		return this.classindex;
+	}
+
+	public String getClassName() {
+		String cn = this.getClass().toString();
+		String temp = cn.substring(cn.indexOf("entity.") + 7);
+		return temp;
+	}
 	@Override
     public int compareTo(Items i) {
         
@@ -68,9 +93,12 @@ public class Items implements Comparable<Items> {
 	public void setId(int id) {
 		this.id = id;
 	}
-  
-	
-	
 
-    
+	public Integer getClassindex() {
+		return classindex;
+	}
+
+	public void setClassindex(Integer classindex) {
+		this.classindex = classindex;
+	}
 }

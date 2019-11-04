@@ -46,7 +46,7 @@ public class MainPart extends JFrame {
         itemList1.add(shortItem_10);
 
         // 滚动列表的展示模块
-        ShowComponent ScrollComponent = new ShowComponent(itemList);
+        ShowComponent ScrollComponent = new ShowComponent();
         ScrollComponent.addList(itemList1);
         JScrollPane jScrollPane = new JScrollPane(ScrollComponent);
         this.add(jScrollPane, BorderLayout.CENTER);
@@ -82,7 +82,9 @@ public class MainPart extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 System.out.println("H");
                 Items items = new CycleItem("test", "test");
-                AddDialog addDialog = new AddDialog(that, "添加", items, ScrollComponent);
+//                AddDialog addDialog = new AddDialog(that, "添加", items, ScrollComponent);
+                AddDialog addDialog = new AddDialog(ScrollComponent);
+                addDialog.AddItemDialog(that, "Add a Item", items);
             }
         });
     }

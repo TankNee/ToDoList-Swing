@@ -2,16 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="795dc6ab-3400-4734-833b-a6bcd9420cee" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/mysql_mysql_connector_java_5_1_48.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/cn/tanknee/java/pa/utils/DatabaseUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/cn/tanknee/java/pa/utils/MyStringUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/personalagency.iml" beforeDir="false" afterPath="$PROJECT_DIR$/personalagency.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cn/tanknee/java/pa/component/AddDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/tanknee/java/pa/component/AddDialog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cn/tanknee/java/pa/component/ItemDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/tanknee/java/pa/component/ItemDialog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cn/tanknee/java/pa/component/ItemMoudle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/tanknee/java/pa/component/ItemMoudle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cn/tanknee/java/pa/component/ProjectMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/tanknee/java/pa/component/ProjectMenu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/cn/tanknee/java/pa/component/ShowComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/tanknee/java/pa/component/ShowComponent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cn/tanknee/java/pa/entity/CycleItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/tanknee/java/pa/entity/CycleItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cn/tanknee/java/pa/entity/Items.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/tanknee/java/pa/entity/Items.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/cn/tanknee/java/pa/entity/LongTimeItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/tanknee/java/pa/entity/LongTimeItem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/cn/tanknee/java/pa/entity/ShortItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/tanknee/java/pa/entity/ShortItem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/cn/tanknee/java/pa/main/MainPart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/tanknee/java/pa/main/MainPart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cn/tanknee/java/pa/utils/DatabaseUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/tanknee/java/pa/utils/DatabaseUtils.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -171,6 +174,7 @@
       <workItem from="1572776842907" duration="314000" />
       <workItem from="1572777220766" duration="12960000" />
       <workItem from="1572795433198" duration="1171000" />
+      <workItem from="1572841230371" duration="12433000" />
     </task>
     <task id="LOCAL-00001" summary="实现了显示的条例的功能，下一步是画出整个的设计图例。先做好设计。">
       <created>1572449592820</created>
@@ -253,8 +257,18 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/cn/tanknee/java/pa/component/ProjectMenu.java</url>
-          <line>41</line>
+          <line>75</line>
           <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/cn/tanknee/java/pa/utils/DatabaseUtils.java</url>
+          <line>70</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/cn/tanknee/java/pa/utils/DatabaseUtils.java</url>
+          <line>95</line>
+          <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

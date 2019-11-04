@@ -13,7 +13,7 @@ import java.util.ArrayList;
 /**
  * 必须是可滚动的控件才能实现在ScrollPanel里面滚动！ 这个控件里存放任务条例 这个控件用于负责ScrollPanel里的滚动。
  */
-public class ShowComponent extends JPanel implements ActionListener, Scrollable {
+public class ShowComponent extends JPanel implements Scrollable {
     /**
      * 清单链表
      */
@@ -56,6 +56,13 @@ public class ShowComponent extends JPanel implements ActionListener, Scrollable 
 
 
     public ShowComponent() {
+        DatabaseUtils databaseUtils = new DatabaseUtils();
+        this.listarray = databaseUtils.readAllOfDatabase();
+        this.currentlist = this.listarray.get(0);
+        setLayout(new GridLayout(this.currentlist.getItems().size(), 1, 0, this.margin));
+        for (Items items1 : this.currentlist.getItems()) {
+            add(new ItemMoudle(items1));
+        }
     }
 
     public ShowComponent(Items items) {
@@ -75,14 +82,16 @@ public class ShowComponent extends JPanel implements ActionListener, Scrollable 
     }
 
     public ShowComponent(ItemList itemList) {
+        DatabaseUtils databaseUtils = new DatabaseUtils();
+//        this.listarray =  databaseUtils.readAllOfDatabase();
         this.listarray.add(itemList);
         this.currentlist = itemList;
-        setLayout(new GridLayout(this.currentlist.getItems().size(), 1, 5, this.margin));
+        setLayout(new GridLayout(this.currentlist.getItems().size(), 1, 0, this.margin));
         for (Items items1 : this.currentlist.getItems()) {
             add(new ItemMoudle(items1));
         }
-        DatabaseUtils databaseUtils = new DatabaseUtils();
-        databaseUtils.saveToDatabase(itemList);
+
+//        databaseUtils.saveToDatabase(itemList);
     }
 
     /**
@@ -146,11 +155,11 @@ public class ShowComponent extends JPanel implements ActionListener, Scrollable 
         this.getParent().setVisible(true);
     }
 
-
-    @Override
-    public void actionPerformed(ActionEvent e) {
+    public void readFromDatabase() {
 
     }
+
+
 
     @Override
     public Dimension getPreferredScrollableViewportSize() {
