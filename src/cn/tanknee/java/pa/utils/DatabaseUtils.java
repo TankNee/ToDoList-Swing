@@ -3,6 +3,7 @@ package cn.tanknee.java.pa.utils;
 import cn.tanknee.java.pa.component.ShowComponent;
 import cn.tanknee.java.pa.entity.*;
 
+import java.io.Serializable;
 import java.sql.*;
 import java.util.ArrayList;
 
@@ -147,6 +148,14 @@ public class DatabaseUtils {
                 stmt.setString(4, i.getItem_deadline());
                 stmt.setString(5, i.getItem_name());
                 stmt.executeLargeUpdate();
+                String getid = "select max(id) from " + itemList.getListname() + " ;";
+
+                ResultSet resultSet = statement.executeQuery(getid);
+                while (resultSet.next()) {
+                    i.setId(resultSet.getInt("max(id)"));
+                }
+//                int temp = stmt.getGeneratedKeys().getInt(1);
+//                i.setId(stmt.getGeneratedKeys().getInt(1));
                 statement.close();
                 stmt.close();
             }

@@ -173,7 +173,7 @@
       <workItem from="1572776842907" duration="314000" />
       <workItem from="1572777220766" duration="12960000" />
       <workItem from="1572795433198" duration="1171000" />
-      <workItem from="1572841230371" duration="38536000" />
+      <workItem from="1572841230371" duration="41407000" />
     </task>
     <task id="LOCAL-00001" summary="实现了显示的条例的功能，下一步是画出整个的设计图例。先做好设计。">
       <created>1572449592820</created>
@@ -245,7 +245,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572954704829</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="V1.0.4&#10;通过右键菜单的形式实现了任务在列表之间的转移，复制等等">
+      <created>1572956645976</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1572956645976</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -280,41 +287,27 @@
     <MESSAGE value="V1.0.2.5&#10;程序界面的所有操作都可以即时存储的数据库中" />
     <MESSAGE value="V1.0.2.8&#10;现在开始尝试使用Calendar类来实现截止日期" />
     <MESSAGE value="V1.0.3&#10;实现了几个排序，列表的添加修改，任务的查找" />
-    <option name="LAST_COMMIT_MESSAGE" value="V1.0.3&#10;实现了几个排序，列表的添加修改，任务的查找" />
+    <MESSAGE value="V1.0.4&#10;通过右键菜单的形式实现了任务在列表之间的转移，复制等等" />
+    <option name="LAST_COMMIT_MESSAGE" value="V1.0.4&#10;通过右键菜单的形式实现了任务在列表之间的转移，复制等等" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/cn/tanknee/java/pa/component/ShowComponent.java</url>
-          <line>193</line>
-          <option name="timeStamp" value="17" />
+          <url>file://$PROJECT_DIR$/src/cn/tanknee/java/pa/utils/DatabaseUtils.java</url>
+          <line>155</line>
+          <option name="timeStamp" value="34" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/cn/tanknee/java/pa/component/ChangeAndDeleteDialog.java</url>
-          <line>79</line>
-          <option name="timeStamp" value="18" />
+          <url>file://$PROJECT_DIR$/src/cn/tanknee/java/pa/utils/DatabaseUtils.java</url>
+          <line>154</line>
+          <option name="timeStamp" value="35" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/cn/tanknee/java/pa/component/ChangeAndDeleteDialog.java</url>
-          <line>45</line>
-          <option name="timeStamp" value="19" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/cn/tanknee/java/pa/component/ProjectMenu.java</url>
-          <line>140</line>
-          <option name="timeStamp" value="22" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/cn/tanknee/java/pa/component/RightMouseMenu.java</url>
-          <line>75</line>
-          <option name="timeStamp" value="27" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/cn/tanknee/java/pa/component/ItemMoudle.java</url>
-          <line>118</line>
-          <option name="timeStamp" value="28" />
+          <url>file://$PROJECT_DIR$/src/cn/tanknee/java/pa/utils/DatabaseUtils.java</url>
+          <line>150</line>
+          <option name="timeStamp" value="36" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

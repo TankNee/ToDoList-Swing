@@ -98,12 +98,14 @@ public class ItemMoudle extends JPanel implements MouseListener {
             ChangeAndDeleteDialog changeAndDeleteDialog = new ChangeAndDeleteDialog(jFrame, "Task", this.items, showComponent);
         } else if (e.getButton() == MouseEvent.BUTTON3) {
             JPopupMenu menu = new JPopupMenu();
-            JMenu mCopy, mCut, mDel;
+            JMenu mCopy, mCut;
             menu = new JPopupMenu();
 
             mCopy = new JMenu("复制到(C)");
             mCut = new JMenu("剪切到(T)");
-            mDel = new JMenu("删除(D)");
+            JMenuItem mDel = new JMenuItem("删除(D)");
+
+
             for (ItemList itemList : showComponent.getListarray()) {
                 JMenuItem item = new JMenuItem(itemList.getListname());
                 item.addActionListener(new ActionListener() {
@@ -132,6 +134,12 @@ public class ItemMoudle extends JPanel implements MouseListener {
                 });
                 mCut.add(item);
             }
+            mDel.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    showComponent.removeItem(items);
+                }
+            });
             menu.add(mCopy);
             menu.add(mCut);
             menu.add(mDel);
