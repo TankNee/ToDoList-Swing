@@ -1,11 +1,15 @@
 package cn.tanknee.java.pa.component;
 
 import cn.tanknee.java.pa.entity.ItemList;
+import cn.tanknee.java.pa.entity.Items;
+import cn.tanknee.java.pa.utils.DatabaseUtils;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class ProjectMenu extends JMenuBar {
     /**
@@ -41,6 +45,36 @@ public class ProjectMenu extends JMenuBar {
             }
         });
         /**
+         * 删除当前清单
+         */
+        JMenuItem delThisList = new JMenuItem("Delete this List", KeyEvent.VK_D);
+        delThisList.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                DatabaseUtils databaseUtils = new DatabaseUtils();
+                databaseUtils.deleteTable(showComponent.getCurrentlist().getListname());
+                showComponent.getListarray().remove(showComponent.getCurrentlist());
+                showComponent.setCurrentlist(showComponent.getListarray().get(0));
+                showComponent.refreshComponet();
+                refreshMenu();
+            }
+        });
+        /**
+         * 修改当前清单
+         */
+        JMenuItem changeThisList = new JMenuItem("Change this List", KeyEvent.VK_C);
+        changeThisList.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ChangeAndDeleteDialog changeAndDeleteDialog = new ChangeAndDeleteDialog();
+                changeAndDeleteDialog.changeThiList(showComponent);
+                refreshMenu();
+            }
+        });
+        /**
+         * 任务查找
+         */
+        /**
          * 打开外部文件并导入
          */
         JMenuItem openExternalSource = new JMenuItem("Open", KeyEvent.VK_O);
@@ -62,6 +96,8 @@ public class ProjectMenu extends JMenuBar {
         });
 
         fileMenu.add(addNewList);
+        fileMenu.add(delThisList);
+        fileMenu.add(changeThisList);
         fileMenu.add(openExternalSource);
         return fileMenu;
     }
@@ -94,7 +130,40 @@ public class ProjectMenu extends JMenuBar {
 
         JMenu sortList = new JMenu("Sort List");
         JMenuItem sortListByTime = new JMenuItem("Sort List By Time");
+        sortListByTime.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                /**
+                 * 暂时还未想好怎么排序。
+                 */
+//                Items[] items = showComponent.getCurrentlistArray();
+//                Arrays.sort(items);
+//                showComponent.setCurrentlistByArray(items);
+//                showComponent.refreshComponet();
+                refreshMenu();
+            }
+        });
         JMenuItem sortListByName = new JMenuItem("Sort List By Name");
+        sortListByName.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String[] listname = new String[showComponent.getListarray().size()];
+                for (int i = 0; i < listname.length; i++) {
+                    listname[i] = showComponent.getListarray().get(i).getListname();
+                }
+                Arrays.sort(listname);
+                ArrayList<ItemList> al = new ArrayList<>();
+                for (int i = 0; i < listname.length; i++) {
+                    for (ItemList itemList : showComponent.getListarray()) {
+                        if (itemList.getListname().equals(listname[i])) {
+                            al.add(itemList);
+                        }
+                    }
+                }
+                showComponent.setListarray(al);
+                refreshMenu();
+            }
+        });
         sortList.add(sortListByTime);
         sortList.add(sortListByName);
 

@@ -27,6 +27,9 @@ public class ShowComponent extends JPanel implements Scrollable {
      * 行间距
      */
     private int margin = 100;
+    /**
+     * 数据库工具
+     */
     private DatabaseUtils databaseUtils = new DatabaseUtils();
 
 
@@ -40,6 +43,22 @@ public class ShowComponent extends JPanel implements Scrollable {
 
     public ItemList getCurrentlist() {
         return currentlist;
+    }
+
+    public Items[] getCurrentlistArray() {
+        Items[] itemLists = new Items[listarray.size()];
+        for (int i = 0; i < listarray.size(); i++) {
+            itemLists[i] = currentlist.getItems().get(i);
+        }
+        return itemLists;
+    }
+
+    public void setCurrentlistByArray(Items[] items) {
+        for (int i = 0; i < items.length; i++) {
+            this.currentlist.getItems().set(i, items[i]);
+        }
+
+
     }
 
     public void setCurrentlist(ItemList currentlist) {
@@ -58,6 +77,12 @@ public class ShowComponent extends JPanel implements Scrollable {
 
     public ShowComponent() {
         this.listarray = databaseUtils.readAllOfDatabase();
+        if (this.listarray.size() == 0) {
+            // 说明数据库中没有数据
+            // 创建一个新表
+            AddDialog addDialog = new AddDialog();
+            addDialog.AddListDialog(this);
+        }
         this.currentlist = this.listarray.get(0);
         setLayout(new GridLayout(this.currentlist.getItems().size(), 1, 0, this.margin));
         for (Items items1 : this.currentlist.getItems()) {
@@ -164,8 +189,37 @@ public class ShowComponent extends JPanel implements Scrollable {
         }
         revalidate();
         repaint();
+        if (this.getParent() != null) {
+            this.getParent().setVisible(true);
+        }
+    }
 
-        this.getParent().setVisible(true);
+    public void searchInList(String context) {
+        ArrayList<Items> al = new ArrayList<>();
+        for (Items i : currentlist.getItems()) {
+            if (i.getItem_name().contains(context)) {
+                al.add(i);
+                continue;
+//                System.out.println();
+            } else if (i.getItem_note().contains(context)) {
+                al.add(i);
+                continue;
+            }
+        }
+        showSearchResult(al);
+    }
+
+    public void showSearchResult(ArrayList<Items> items) {
+        removeAll();
+        setLayout(new GridLayout(items.size(), 1, 5, margin));
+        for (Items items1 : items) {
+            add(new ItemMoudle(items1));
+        }
+        revalidate();
+        repaint();
+        if (this.getParent() != null) {
+            this.getParent().setVisible(true);
+        }
     }
 
 

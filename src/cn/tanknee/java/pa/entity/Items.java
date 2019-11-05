@@ -16,7 +16,7 @@ public class Items implements Comparable<Items> {
 	// 截止日期
 	private String item_deadline = "19-11-05";
 	// 日期的形式
-	private SimpleDateFormat sdf = new SimpleDateFormat("yy-MM-dd");
+    private SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 	// 截止日期的Date表示形式
 	private Date item_deadline_date = null;
 	// 类名序号

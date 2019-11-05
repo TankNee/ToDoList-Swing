@@ -57,6 +57,7 @@ public class ItemMoudle extends JPanel implements MouseListener {
         this.note = i.getItem_note();
         this.type = i.getClassName();
         this.deadline = i.getItem_deadline();
+        this.setBackground(Color.GRAY);
         nameLabel.setText("Task Name:       " + name);
         noteLabel.setText("Task Note:       " + note);
         typeLabel.setText("Task Type:       " + type);
@@ -84,10 +85,27 @@ public class ItemMoudle extends JPanel implements MouseListener {
 
     @Override
     public void mouseClicked(MouseEvent e) {
-        System.out.println("Succeed" + this.name);
-        JFrame jFrame = (JFrame) this.getRootPane().getParent();
-        ShowComponent showPanel = (ShowComponent) this.getParent();
-        ChangeAndDeleteDialog changeAndDeleteDialog = new ChangeAndDeleteDialog(jFrame, "Task", this.items, showPanel);
+        if (e.getButton() == MouseEvent.BUTTON1) {
+            System.out.println("Succeed" + this.name);
+            JFrame jFrame = (JFrame) this.getRootPane().getParent();
+            ShowComponent showPanel = (ShowComponent) this.getParent();
+            ChangeAndDeleteDialog changeAndDeleteDialog = new ChangeAndDeleteDialog(jFrame, "Task", this.items, showPanel);
+        } else if (e.getButton() == MouseEvent.BUTTON3) {
+            JPopupMenu menu = new JPopupMenu();
+            JMenuItem mCopy, mCut, mPaste, mDel;
+            menu = new JPopupMenu();
+            mCopy = new JMenuItem("复制(C)");
+            menu.add(mCopy);
+            mCut = new JMenuItem("剪切(T)");
+            menu.add(mCut);
+            mPaste = new JMenuItem("粘贴(P)");
+            menu.add(mPaste);
+            mDel = new JMenuItem("删除(D)");
+            menu.add(mDel);
+//            JFrame jf = (JFrame) ItemMoudle.this.getRootPane().getParent();
+            menu.show(ItemMoudle.this, e.getX(), e.getY());
+        }
+
     }
 
     @Override

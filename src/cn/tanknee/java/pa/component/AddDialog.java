@@ -91,6 +91,7 @@ public class AddDialog extends ItemDialog {
                 switch (jComboBox.getSelectedIndex()) {
                     case 0:
                         items1 = new LongTimeItem();
+
                         break;
                     case 1:
                         items1 = new ShortItem();
@@ -101,11 +102,15 @@ public class AddDialog extends ItemDialog {
                     default:
                         break;
                 }
-                System.out.println(items1.getClass().toString().substring(6) + input_name.getText()
-                        + input_note.getText() + input_deadline_year.getText() + "-" + input_deadline_month.getText() + "-" + input_deadline_day.getText());
                 items1.setItem_name(input_name.getText());
                 items1.setItem_note(input_note.getText());
-                items1.setItem_deadline(input_deadline_year.getText() + "-" + input_deadline_month.getText() + "-" + input_deadline_day.getText());
+                if (!MyStringUtils.isNumber(input_deadline_year.getText()) && !MyStringUtils.isNumber(input_deadline_month.getText()) && !MyStringUtils.isNumber(input_deadline_day.getText())) {
+                    items.setItem_deadline(input_deadline_year.getText() + "-" + input_deadline_month.getText() + "-" + input_deadline_day.getText());
+                } else {
+                    System.out.println("输入错误");
+                    items.setItem_deadline("2019-11-09");
+                }
+//                items1.setItem_deadline(input_deadline_year.getText() + "-" + input_deadline_month.getText() + "-" + input_deadline_day.getText());
                 showComponent.addNewItem(items1);
                 DatabaseUtils databaseUtils = new DatabaseUtils();
                 databaseUtils.saveToDatabase(items1, showComponent);

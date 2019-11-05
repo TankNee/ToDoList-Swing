@@ -239,4 +239,32 @@ public class DatabaseUtils {
             e.printStackTrace();
         }
     }
+
+    public void deleteTable(String tablename) {
+        try {
+            Class.forName(driver);
+            Connection c = DriverManager.getConnection(url, user, password);
+            String delsql = "drop table " + tablename + " ;";
+            Statement statement = c.createStatement();
+            statement.execute(delsql);
+            statement.close();
+            c.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void renameTable(String oldname, String newname) {
+        try {
+            Class.forName(driver);
+            Connection c = DriverManager.getConnection(url, user, password);
+            String delsql = "rename table " + oldname + " to " + newname + " ;";
+            Statement statement = c.createStatement();
+            statement.execute(delsql);
+            statement.close();
+            c.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }

@@ -1,6 +1,9 @@
 package cn.tanknee.java.pa.component;
 
 import cn.tanknee.java.pa.entity.*;
+import cn.tanknee.java.pa.utils.DatabaseUtils;
+import cn.tanknee.java.pa.utils.MyStringUtils;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -45,10 +48,15 @@ public class ChangeAndDeleteDialog extends ItemDialog {
 //        input_deadline.setBounds(100, item_deadline.getY(), 200, 20);
 //        input_deadline.setText(items.getItem_deadline());
         Calendar c = Calendar.getInstance();
-        SimpleDateFormat sdf = new SimpleDateFormat("yy-MM-dd");
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         try {
             c.setTime(sdf.parse(items.getItem_deadline()));
         } catch (ParseException pe) {
+            try {
+                c.setTime(sdf.parse("2019-11-05"));
+            } catch (ParseException pe2) {
+                pe2.printStackTrace();
+            }
             pe.printStackTrace();
         }
 
@@ -57,10 +65,10 @@ public class ChangeAndDeleteDialog extends ItemDialog {
         input_deadline_year.setText(String.valueOf(c.get(Calendar.YEAR)));
         JTextField input_deadline_month = new JTextField();
         input_deadline_month.setBounds(167, item_deadline.getY(), 40, 20);
-        input_deadline_month.setText(String.valueOf(c.get(Calendar.MONTH)));
+        input_deadline_month.setText(String.valueOf(c.get(Calendar.MONTH) + 1));
         JTextField input_deadline_day = new JTextField();
         input_deadline_day.setBounds(234, item_deadline.getY(), 40, 20);
-        input_deadline_day.setText(String.valueOf(c.get(Calendar.DAY_OF_YEAR)));
+        input_deadline_day.setText(String.valueOf(c.get(Calendar.DAY_OF_MONTH)));
 
 
         // 确认,删除与取消按钮
@@ -71,7 +79,11 @@ public class ChangeAndDeleteDialog extends ItemDialog {
             public void actionPerformed(ActionEvent e) {
                 items.setItem_name(input_name.getText());
                 items.setItem_note(input_note.getText());
-                items.setItem_deadline(input_deadline_year.getText() + "-" + input_deadline_month.getText() + "-" + input_deadline_day.getText());
+                if (!MyStringUtils.isNumber(input_deadline_year.getText()) && !MyStringUtils.isNumber(input_deadline_month.getText()) && !MyStringUtils.isNumber(input_deadline_day.getText())) {
+                    items.setItem_deadline(input_deadline_year.getText() + "-" + input_deadline_month.getText() + "-" + input_deadline_day.getText());
+                } else {
+                    items.setItem_deadline("2019-11-09");
+                }
                 showComponent.changeItem(items);
 //                showComponent.refreshComponet();
                 jf.setVisible(true);
@@ -123,4 +135,51 @@ public class ChangeAndDeleteDialog extends ItemDialog {
     }
 
 
+    public ChangeAndDeleteDialog() {
+
+    }
+
+    public void changeThiList(ShowComponent showComponent) {
+        this.setTitle("修改列表");
+        JDialog that = this;
+        JLabel listName = new JLabel("List Name：");
+        listName.setBounds(80, 30, 80, 20);
+        JTextField jTextField = new JTextField();
+        jTextField.setBounds(170, 30, 200, 20);
+        jTextField.setText(showComponent.getCurrentlist().getListname());
+
+
+        JButton confirmBtn = new JButton("Confirm");
+        confirmBtn.setBounds(80, 90, 130, 30);
+        confirmBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (!MyStringUtils.isNumber(jTextField.getText())) {
+                    DatabaseUtils databaseUtils = new DatabaseUtils();
+                    databaseUtils.renameTable(showComponent.getCurrentlist().getListname(), jTextField.getText());
+                    showComponent.getCurrentlist().setListname(jTextField.getText());
+                    dispose();
+                    showComponent.refreshComponet();
+                } else {
+                    System.out.println("不可以使用纯数字的名称");
+                    dispose();
+                }
+            }
+        });
+        JButton cancelBtn = new JButton("Cancel");
+        cancelBtn.setBounds(240, 90, 130, 30);
+        cancelBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                that.dispose();
+            }
+        });
+
+        add(listName);
+        add(jTextField);
+        add(confirmBtn);
+        add(cancelBtn);
+        this.setVisible(true);
+
+    }
 }
