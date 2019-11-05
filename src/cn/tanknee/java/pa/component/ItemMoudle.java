@@ -1,10 +1,13 @@
 package cn.tanknee.java.pa.component;
 
 import cn.tanknee.java.pa.entity.*;
+import cn.tanknee.java.pa.utils.DatabaseUtils;
 
 import javax.swing.*;
 import javax.swing.border.EtchedBorder;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
@@ -23,6 +26,7 @@ public class ItemMoudle extends JPanel implements MouseListener {
     private JLabel noteLabel = new JLabel();
     private JLabel typeLabel = new JLabel();
     private JLabel deadlineLabel = new JLabel();
+    private DatabaseUtils databaseUtils = new DatabaseUtils();
 
     @Override
     public String getName() {
@@ -85,22 +89,51 @@ public class ItemMoudle extends JPanel implements MouseListener {
 
     @Override
     public void mouseClicked(MouseEvent e) {
+        JFrame jFrame = (JFrame) this.getRootPane().getParent();
+        ShowComponent showComponent = (ShowComponent) this.getParent();
+        JPanel that = this;
         if (e.getButton() == MouseEvent.BUTTON1) {
             System.out.println("Succeed" + this.name);
-            JFrame jFrame = (JFrame) this.getRootPane().getParent();
-            ShowComponent showPanel = (ShowComponent) this.getParent();
-            ChangeAndDeleteDialog changeAndDeleteDialog = new ChangeAndDeleteDialog(jFrame, "Task", this.items, showPanel);
+
+            ChangeAndDeleteDialog changeAndDeleteDialog = new ChangeAndDeleteDialog(jFrame, "Task", this.items, showComponent);
         } else if (e.getButton() == MouseEvent.BUTTON3) {
             JPopupMenu menu = new JPopupMenu();
-            JMenuItem mCopy, mCut, mPaste, mDel;
+            JMenu mCopy, mCut, mDel;
             menu = new JPopupMenu();
-            mCopy = new JMenuItem("复制(C)");
+
+            mCopy = new JMenu("复制到(C)");
+            mCut = new JMenu("剪切到(T)");
+            mDel = new JMenu("删除(D)");
+            for (ItemList itemList : showComponent.getListarray()) {
+                JMenuItem item = new JMenuItem(itemList.getListname());
+                item.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        itemList.add(ItemMoudle.this.items);
+                        showComponent.changeList(itemList);
+                        databaseUtils.saveToDatabase(ItemMoudle.this.items, itemList);
+                        showComponent.refreshComponet();
+                    }
+                });
+                mCopy.add(item);
+            }
+            for (ItemList itemList : showComponent.getListarray()) {
+                JMenuItem item = new JMenuItem(itemList.getListname());
+                item.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        itemList.add(ItemMoudle.this.items);
+                        databaseUtils.saveToDatabase(ItemMoudle.this.items, itemList);
+                        showComponent.getCurrentlist().remove(ItemMoudle.this.items);
+                        databaseUtils.removeItemFromDatabase(ItemMoudle.this.items, showComponent.getCurrentlist().getListname());
+                        showComponent.changeList(itemList);
+                        showComponent.refreshComponet();
+                    }
+                });
+                mCut.add(item);
+            }
             menu.add(mCopy);
-            mCut = new JMenuItem("剪切(T)");
             menu.add(mCut);
-            mPaste = new JMenuItem("粘贴(P)");
-            menu.add(mPaste);
-            mDel = new JMenuItem("删除(D)");
             menu.add(mDel);
 //            JFrame jf = (JFrame) ItemMoudle.this.getRootPane().getParent();
             menu.show(ItemMoudle.this, e.getX(), e.getY());

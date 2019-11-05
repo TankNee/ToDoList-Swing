@@ -123,6 +123,43 @@ public class DatabaseUtils {
     }
 
     /**
+     *
+     */
+    public void saveToDatabase(Items i, ItemList itemList) {
+        try {
+            Class.forName(driver);
+            Connection c = DriverManager.getConnection(url, user, password);
+            if (!c.isClosed()) {
+
+                System.out.println("Succeed");
+                Statement statement = c.createStatement();
+                String createDataBase = "create table " + itemList.getListname() + " (id int not null primary key AUTO_INCREMENT, name varchar(255),type varchar(255),note varchar(255),deadline varchar(255),subtask varchar(255));";
+                if (!isTableExist(itemList.getListname())) {
+                    statement.execute(createDataBase);
+                } else {
+                    System.out.println("数据表已存在");
+                }
+                String savedata = "insert into " + itemList.getListname() + " values(NULL,?,?,?,?,?);";
+                PreparedStatement stmt = c.prepareStatement(savedata);
+                stmt.setString(1, i.getItem_name());
+                stmt.setString(2, i.getClassName());
+                stmt.setString(3, i.getItem_note());
+                stmt.setString(4, i.getItem_deadline());
+                stmt.setString(5, i.getItem_name());
+                stmt.executeLargeUpdate();
+                statement.close();
+                stmt.close();
+            }
+            c.close();
+        } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+            System.out.println(e.toString());
+        } finally {
+
+        }
+
+    }
+    /**
      * 判断表是否存在
      *
      * @param tablename
