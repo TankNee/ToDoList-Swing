@@ -1,20 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="795dc6ab-3400-4734-833b-a6bcd9420cee" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cn/tanknee/java/pa/component/AddDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/tanknee/java/pa/component/AddDialog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cn/tanknee/java/pa/component/ChangeAndDeleteDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/tanknee/java/pa/component/ChangeAndDeleteDialog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cn/tanknee/java/pa/component/ItemMoudle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/tanknee/java/pa/component/ItemMoudle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cn/tanknee/java/pa/component/ProjectMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/tanknee/java/pa/component/ProjectMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cn/tanknee/java/pa/component/ShowComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/tanknee/java/pa/component/ShowComponent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cn/tanknee/java/pa/entity/CycleItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/tanknee/java/pa/entity/CycleItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cn/tanknee/java/pa/entity/Items.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/tanknee/java/pa/entity/Items.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cn/tanknee/java/pa/entity/LongTimeItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/tanknee/java/pa/entity/LongTimeItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cn/tanknee/java/pa/entity/ShortItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/tanknee/java/pa/entity/ShortItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cn/tanknee/java/pa/main/MainPart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/tanknee/java/pa/main/MainPart.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cn/tanknee/java/pa/utils/DatabaseUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/tanknee/java/pa/utils/DatabaseUtils.java" afterDir="false" />
-    </list>
+    <list default="true" id="795dc6ab-3400-4734-833b-a6bcd9420cee" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -185,7 +172,7 @@
       <workItem from="1572841230371" duration="42287000" />
       <workItem from="1573213955601" duration="2526000" />
       <workItem from="1573466590252" duration="1324000" />
-      <workItem from="1573554729593" duration="9249000" />
+      <workItem from="1573554729593" duration="9493000" />
     </task>
     <task id="LOCAL-00001" summary="实现了显示的条例的功能，下一步是画出整个的设计图例。先做好设计。">
       <created>1572449592820</created>
@@ -271,11 +258,28 @@
       <option name="project" value="LOCAL" />
       <updated>1572961102520</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="V1.0.4.8&#10;纠正了一些错误&#10;开始制作不同的类">
+      <created>1573564145657</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1573564145657</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -308,7 +312,8 @@
     <MESSAGE value="V1.0.3&#10;实现了几个排序，列表的添加修改，任务的查找" />
     <MESSAGE value="V1.0.4&#10;通过右键菜单的形式实现了任务在列表之间的转移，复制等等" />
     <MESSAGE value="V1.0.4.3&#10;纠正了一些错误。&#10;暂时告一段落，接下来开始复习" />
-    <option name="LAST_COMMIT_MESSAGE" value="V1.0.4.3&#10;纠正了一些错误。&#10;暂时告一段落，接下来开始复习" />
+    <MESSAGE value="V1.0.4.8&#10;纠正了一些错误&#10;开始制作不同的类" />
+    <option name="LAST_COMMIT_MESSAGE" value="V1.0.4.8&#10;纠正了一些错误&#10;开始制作不同的类" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
