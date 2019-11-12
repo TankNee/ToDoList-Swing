@@ -7,7 +7,6 @@ public class CycleItem extends Items {
     private String repeatPeriod;// 重复周期
     // 类名序号
     private Integer classindex = 2;
-    private String classname = "CycleItem";
 
     @Override
     public Integer getClassindex() {

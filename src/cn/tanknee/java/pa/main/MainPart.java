@@ -24,17 +24,18 @@ public class MainPart extends JFrame {
         this.add(titlePanel);
 
         // 滚动列表的展示模块
-        ShowComponent ScrollComponent = new ShowComponent();
-        JScrollPane jScrollPane = new JScrollPane(ScrollComponent);
+        ShowComponent scrollComponent = new ShowComponent();
+        JScrollPane jScrollPane = new JScrollPane(scrollComponent);
         this.add(jScrollPane, BorderLayout.CENTER);
 
         // 搜寻按钮
-        JButton searchbtn = new JButton("Search");
+        JButton searchbtn = new JButton("Search ");
         this.add(searchbtn, BorderLayout.NORTH);
         searchbtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                SearchDialog searchDialog = new SearchDialog(ScrollComponent);
+                SearchDialog searchDialog = new SearchDialog(scrollComponent);
+//                searchbtn.setText("Search in "+scrollComponent.getCurrentlist().getListname());
             }
         });
 
@@ -49,7 +50,7 @@ public class MainPart extends JFrame {
         this.add(bottompanel, BorderLayout.SOUTH);
 
         // 顶部的菜单
-        this.setJMenuBar(new ProjectMenu(ScrollComponent));
+        this.setJMenuBar(new ProjectMenu(scrollComponent));
 
         // 传入主界面的指针
         JFrame that = this;
@@ -60,8 +61,8 @@ public class MainPart extends JFrame {
                 System.out.println("H");
                 Items items = new CycleItem("test", "test");
 //                AddDialog addDialog = new AddDialog(that, "添加", items, ScrollComponent);
-                AddDialog addDialog = new AddDialog(ScrollComponent);
-                addDialog.AddItemDialog(that, "Add a Item", items);
+                AddDialog addDialog = new AddDialog(scrollComponent);
+                addDialog.addItemDialog(that, "Add a Item", items);
             }
         });
     }

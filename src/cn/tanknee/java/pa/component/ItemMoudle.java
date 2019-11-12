@@ -22,6 +22,7 @@ public class ItemMoudle extends JPanel implements MouseListener {
     private String type;
     private String deadline;
     private Items items;
+    private JLabel completeLabel = new JLabel();
     private JLabel nameLabel = new JLabel();
     private JLabel noteLabel = new JLabel();
     private JLabel typeLabel = new JLabel();
@@ -56,16 +57,18 @@ public class ItemMoudle extends JPanel implements MouseListener {
 
     public ItemMoudle(Items i) {
         this.items = i;
-        setLayout(new GridLayout(4, 1, 50, 50));
+        setLayout(new GridLayout(5, 1, 50, 50));
         this.name = i.getItem_name();
         this.note = i.getItem_note();
-        this.type = i.getClassName();
+        this.type = i.getClass().getSimpleName();
         this.deadline = i.getItem_deadline();
         this.setBackground(Color.GRAY);
+        completeLabel.setText("Is it completed ?       " + i.getComplete());
         nameLabel.setText("Task Name:       " + name);
         noteLabel.setText("Task Note:       " + note);
         typeLabel.setText("Task Type:       " + type);
         deadlineLabel.setText("Task Deadline:       " + deadline);
+        add(completeLabel);
         add(nameLabel);
         add(noteLabel);
         add(typeLabel);

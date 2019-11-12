@@ -6,8 +6,6 @@ import cn.tanknee.java.pa.utils.DatabaseUtils;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 /**
@@ -81,7 +79,7 @@ public class ShowComponent extends JPanel implements Scrollable {
             // 说明数据库中没有数据
             // 创建一个新表
             AddDialog addDialog = new AddDialog();
-            addDialog.AddListDialog(this);
+            addDialog.addListDialog(this);
         }
         this.currentlist = this.listarray.get(0);
         setLayout(new GridLayout(this.currentlist.getItems().size(), 1, 0, this.margin));
@@ -164,16 +162,11 @@ public class ShowComponent extends JPanel implements Scrollable {
          * TODO 大体思路：获取目标位置的index，记住当前位置的index
          * TODO 然后通过不断地交换来实现位置的转移，最后刷新整个容器界面
          */
-//        this.currentlist.getItems().indexOf();
-//        this.currentlist.getItems().set(index,items);
         refreshComponet();
     }
 
     public void addList(ItemList itemList) {
         this.listarray.add(itemList);
-//        this.currentlist = itemList;
-//        refreshComponet();
-//        refreshComponet();
     }
 
     public void changeList(ItemList itemList) {

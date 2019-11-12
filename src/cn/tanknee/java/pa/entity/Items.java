@@ -21,8 +21,16 @@ public class Items implements Comparable<Items> {
 	private Date item_deadline_date = null;
 	// 类名序号
 	private Integer classindex;
+	// 是否完成的标识符
+	private Boolean complete = false;
 
-    
+	public Boolean getComplete() {
+		return complete;
+	}
+
+	public void setComplete(Boolean complete) {
+		this.complete = complete;
+	}
 	public Items(String item_name, String item_note) {
 		this.item_name = item_name;
 		this.item_note = item_note;
@@ -77,9 +85,7 @@ public class Items implements Comparable<Items> {
 	}
 
 	public String getClassName() {
-		String cn = this.getClass().toString();
-		String temp = cn.substring(cn.indexOf("entity.") + 7);
-		return temp;
+		return this.getClass().getSimpleName();
 	}
 
 	public Date getItem_deadline_date() {

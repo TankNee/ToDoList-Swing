@@ -35,6 +35,8 @@ public class ChangeAndDeleteDialog extends ItemDialog {
         item_deadline_month.setBounds(207, 70, 27, 20);
         JLabel item_deadline_day = new JLabel("日");
         item_deadline_day.setBounds(274, 70, 27, 20);
+        JLabel item_complete = new JLabel("完成");
+        item_complete.setBounds(10, 100, 80, 20);
 
 
         //文本输入框
@@ -47,6 +49,17 @@ public class ChangeAndDeleteDialog extends ItemDialog {
 //        JTextField input_deadline = new JTextField();
 //        input_deadline.setBounds(100, item_deadline.getY(), 200, 20);
 //        input_deadline.setText(items.getItem_deadline());
+        JRadioButton completeButton = new JRadioButton();
+        completeButton.setBounds(100, 100, 20, 20);
+        completeButton.setSelected(items.getComplete());
+        completeButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.out.println(completeButton.isSelected());
+                items.setComplete(completeButton.isSelected());
+            }
+        });
+
         Calendar c = Calendar.getInstance();
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         try {
@@ -79,7 +92,7 @@ public class ChangeAndDeleteDialog extends ItemDialog {
             public void actionPerformed(ActionEvent e) {
                 items.setItem_name(input_name.getText());
                 items.setItem_note(input_note.getText());
-                if (!MyStringUtils.isNumber(input_deadline_year.getText()) && !MyStringUtils.isNumber(input_deadline_month.getText()) && !MyStringUtils.isNumber(input_deadline_day.getText())) {
+                if (MyStringUtils.isNumber(input_deadline_year.getText()) && MyStringUtils.isNumber(input_deadline_month.getText()) && MyStringUtils.isNumber(input_deadline_day.getText())) {
                     items.setItem_deadline(input_deadline_year.getText() + "-" + input_deadline_month.getText() + "-" + input_deadline_day.getText());
                 } else {
                     items.setItem_deadline("2019-11-09");
@@ -119,6 +132,7 @@ public class ChangeAndDeleteDialog extends ItemDialog {
         this.add(item_deadline_yaer);
         this.add(item_deadline_month);
         this.add(item_deadline_day);
+        this.add(item_complete);
 
 
         this.add(input_name);
@@ -126,6 +140,7 @@ public class ChangeAndDeleteDialog extends ItemDialog {
         this.add(input_deadline_year);
         this.add(input_deadline_month);
         this.add(input_deadline_day);
+        this.add(completeButton);
 
         this.add(confirm_btn);
         this.add(delete_btn);

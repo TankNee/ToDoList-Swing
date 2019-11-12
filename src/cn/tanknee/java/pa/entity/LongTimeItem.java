@@ -7,7 +7,6 @@ public class LongTimeItem extends Items {
     private ItemList subItem = new ItemList();// 子任务链表
     // 类名序号
     private Integer classindex = 1;
-    private String classname = "LongTimeItem";
 
     @Override
     public Integer getClassindex() {
@@ -19,13 +18,7 @@ public class LongTimeItem extends Items {
         this.classindex = classindex;
     }
 
-    public String getClassname() {
-        return classname;
-    }
 
-    public void setClassname(String classname) {
-        this.classname = classname;
-    }
 
     public LongTimeItem(String item_name, String item_note) {
         super(item_name, item_note);
@@ -36,6 +29,10 @@ public class LongTimeItem extends Items {
 
     public LongTimeItem(String item_name, String item_note, int id) {
         super(item_name, item_note, id);
+    }
+
+    public void test() {
+
     }
 
 }

@@ -20,6 +20,31 @@ import java.util.Map;
  */
 public class AddDialog extends ItemDialog {
     private ShowComponent showComponent;
+    // 标签
+    private JLabel item_model = new JLabel("任务类型");
+    private JLabel item_name = new JLabel("任务名称");
+    private JLabel item_note = new JLabel("任务备注");
+    private JLabel item_deadline = new JLabel("任务日期");
+    private JLabel item_deadline_yaer = new JLabel("年");
+    private JLabel item_deadline_month = new JLabel("月");
+    private JLabel item_deadline_day = new JLabel("日");
+    private JLabel cycle_item_repeat = new JLabel("重复");
+    private JLabel long_item_subtask = new JLabel("子任务清单");
+
+    // 文本输入框
+    private JTextField input_name = new JTextField();
+    private JTextField input_note = new JTextField();
+    private JTextField input_deadline_year = new JTextField();
+    private JTextField input_deadline_month = new JTextField();
+    private JTextField input_deadline_day = new JTextField();
+    private JTextField input_cycle_item_repeat = new JTextField();
+    // 按钮
+    private JButton confirm_btn = new JButton("Confirm");
+    private JButton cancel_btn = new JButton("Cancel");
+    private JButton enter_sublist = new JButton("Enter");
+    // 条例实例
+    private Items items1 = null;
+
 
 
     public AddDialog() {
@@ -34,66 +59,92 @@ public class AddDialog extends ItemDialog {
         super(jf, title);
     }
 
-    public void AddItemDialog(JFrame jf, String title, Items items) {
+    public void addItemDialog(JFrame jf, String title, Items items) {
 //        super(jf, title, items);
+        this.setTitle(title);
         JDialog that = this;
-        // 存放条例类型的散列表
-        Map<String, Integer> map = new HashMap<>();
-        map.put("LongTimeItem", 0);
-        map.put("ShortItem", 1);
-        map.put("CycleItem", 2);
 
         // 下拉框
-        String[] al = {"长期任务", "短期任务", "周期任务"};
+        String[] al = {"ShortItem", "LongTimeItem", "CycleItem"};
         JComboBox<String> jComboBox = new JComboBox<>(al);
         this.add(jComboBox);
         jComboBox.setBounds(100, 10, 200, 20);
 
         // 标签
-        JLabel item_model = new JLabel("任务类型");
         item_model.setBounds(10, 10, 80, 20);
-        JLabel item_name = new JLabel("任务名称");
         item_name.setBounds(10, 40, 80, 20);
-        JLabel item_note = new JLabel("任务备注");
         item_note.setBounds(10, 70, 80, 20);
-        JLabel item_deadline = new JLabel("任务日期");
         item_deadline.setBounds(10, 100, 80, 20);
-        JLabel item_deadline_yaer = new JLabel("年");
         item_deadline_yaer.setBounds(140, 100, 27, 20);
-        JLabel item_deadline_month = new JLabel("月");
         item_deadline_month.setBounds(207, 100, 27, 20);
-        JLabel item_deadline_day = new JLabel("日");
         item_deadline_day.setBounds(274, 100, 27, 20);
 
         // 文本输入框
-        JTextField input_name = new JTextField();
         input_name.setBounds(100, item_name.getY(), 200, 20);
-        JTextField input_note = new JTextField();
         input_note.setBounds(100, item_note.getY(), 200, 20);
-        JTextField input_deadline_year = new JTextField();
         input_deadline_year.setBounds(100, item_deadline.getY(), 40, 20);
-        JTextField input_deadline_month = new JTextField();
         input_deadline_month.setBounds(167, item_deadline.getY(), 40, 20);
-        JTextField input_deadline_day = new JTextField();
         input_deadline_day.setBounds(234, item_deadline.getY(), 40, 20);
 
         // 日历组件
         DateField dateField = new DateField();
         dateField.setBounds(100, item_deadline.getY(), 200, 20);
+        // 子清单操作按钮
+        enter_sublist.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
 
+            }
+        });
+        // 下拉框动作
+        jComboBox.setSelectedIndex(-1);
+        jComboBox.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Object selectedItem = jComboBox.getSelectedItem();
+                if ("ShortItem".equals(selectedItem)) {
+                    AddDialog.this.remove(cycle_item_repeat);
+                    AddDialog.this.remove(input_cycle_item_repeat);
+                    AddDialog.this.remove(long_item_subtask);
+                    AddDialog.this.remove(enter_sublist);
+                    item_deadline.setText("任务日期");
+                    AddDialog.this.repaint();
+                    System.out.println(jComboBox.getSelectedItem());
+                } else if ("LongTimeItem".equals(selectedItem)) {
+                    AddDialog.this.remove(cycle_item_repeat);
+                    AddDialog.this.remove(input_cycle_item_repeat);
+                    item_deadline.setText("任务日期");
+                    long_item_subtask.setBounds(10, 130, 80, 20);
+                    enter_sublist.setBounds(100, long_item_subtask.getY(), 200, 20);
+                    AddDialog.this.add(long_item_subtask);
+                    AddDialog.this.add(enter_sublist);
+                    AddDialog.this.repaint();
+                } else if ("CycleItem".equals(selectedItem)) {
+                    AddDialog.this.remove(long_item_subtask);
+                    AddDialog.this.remove(enter_sublist);
+                    cycle_item_repeat.setBounds(10, 130, 80, 20);
+                    input_cycle_item_repeat.setBounds(100, cycle_item_repeat.getY(), 200, 20);
+                    item_deadline.setText("执行日期");
+                    AddDialog.this.add(cycle_item_repeat);
+                    AddDialog.this.add(input_cycle_item_repeat);
+                    AddDialog.this.repaint();
+
+                }
+
+            }
+        });
         // 确认与取消按钮
-        JButton confirm_btn = new JButton("Confirm");
         confirm_btn.setBounds(input_name.getX() + input_name.getWidth() + 30, item_model.getY(), 100, 40);
         confirm_btn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Items items1 = null;
-                switch (jComboBox.getSelectedIndex()) {
-                    case 0:
-                        items1 = new LongTimeItem();
 
-                        break;
+                switch (jComboBox.getSelectedIndex()) {
                     case 1:
+                        items1 = new LongTimeItem();
+                        ((LongTimeItem) items1).test();
+                        break;
+                    case 0:
                         items1 = new ShortItem();
                         break;
                     case 2:
@@ -119,7 +170,7 @@ public class AddDialog extends ItemDialog {
             }
         });
 
-        JButton cancel_btn = new JButton("Cancel");
+
         cancel_btn.setBounds(input_name.getX() + input_name.getWidth() + 30, item_model.getY() + 70, 100, 40);
 
         cancel_btn.addActionListener(new ActionListener() {
@@ -128,26 +179,12 @@ public class AddDialog extends ItemDialog {
                 that.dispose();
             }
         });
-
-        this.add(item_model);
-        this.add(item_name);
-        this.add(item_note);
-        this.add(item_deadline);
-        this.add(item_deadline_yaer);
-        this.add(item_deadline_month);
-        this.add(item_deadline_day);
-
-
-        this.add(input_name);
-        this.add(input_note);
-        this.add(input_deadline_year);
-        this.add(input_deadline_month);
-        this.add(input_deadline_day);
-        this.add(confirm_btn);
-        this.add(cancel_btn);
+        RefreshDialog();
         this.setVisible(true);
+
     }
-    public void AddListDialog(ShowComponent showComponent) {
+
+    public void addListDialog(ShowComponent showComponent) {
         JDialog that = this;
         this.showComponent = showComponent;
         JLabel listName = new JLabel("List Name：");
@@ -189,5 +226,31 @@ public class AddDialog extends ItemDialog {
         add(confirmBtn);
         add(cancelBtn);
         this.setVisible(true);
+    }
+
+    /**
+     * 添加刷新当前界面
+     *
+     * @Author TankNee
+     */
+    public void RefreshDialog() {
+
+        this.add(item_model);
+        this.add(item_name);
+        this.add(item_note);
+        this.add(item_deadline);
+        this.add(item_deadline_yaer);
+        this.add(item_deadline_month);
+        this.add(item_deadline_day);
+
+
+        this.add(input_name);
+        this.add(input_note);
+        this.add(input_deadline_year);
+        this.add(input_deadline_month);
+        this.add(input_deadline_day);
+        this.add(confirm_btn);
+        this.add(cancel_btn);
+
     }
 }

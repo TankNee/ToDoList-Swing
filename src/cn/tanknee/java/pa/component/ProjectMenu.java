@@ -1,7 +1,6 @@
 package cn.tanknee.java.pa.component;
 
 import cn.tanknee.java.pa.entity.ItemList;
-import cn.tanknee.java.pa.entity.Items;
 import cn.tanknee.java.pa.utils.DatabaseUtils;
 
 import javax.swing.*;
@@ -40,7 +39,7 @@ public class ProjectMenu extends JMenuBar {
             public void actionPerformed(ActionEvent e) {
                 AddDialog addDialog = new AddDialog();
                 addDialog.setTitle("Add A New List");
-                addDialog.AddListDialog(showComponent);
+                addDialog.addListDialog(showComponent);
                 refreshMenu();
             }
         });
@@ -111,6 +110,7 @@ public class ProjectMenu extends JMenuBar {
                 @Override
                 public void actionPerformed(ActionEvent e) {
                     showComponent.changeList(itemList);
+
                 }
             });
             listMenu.add(item);
