@@ -169,8 +169,26 @@ public class ProjectMenu extends JMenuBar {
 
         JMenu sortTask = new JMenu("Sort Task");
         JMenuItem sortTaskByTime = new JMenuItem("Sort Task By Time");
+        sortTaskByTime.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                showComponent.sortItemByTime();
+            }
+        });
         JMenuItem sortTaskByName = new JMenuItem("Sort Task By Name");
+        sortTaskByName.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                showComponent.sortItemByName();
+            }
+        });
         JMenuItem sortTaskByCompletion = new JMenuItem("Sort Task By Completion");
+        sortTaskByCompletion.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                showComponent.sortItemByCompletion();
+            }
+        });
         sortTask.add(sortTaskByTime);
         sortTask.add(sortTaskByName);
         sortTask.add(sortTaskByCompletion);

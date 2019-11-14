@@ -7,6 +7,9 @@ import cn.tanknee.java.pa.utils.DatabaseUtils;
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
 
 /**
  * 必须是可滚动的控件才能实现在ScrollPanel里面滚动！ 这个控件里存放任务条例 这个控件用于负责ScrollPanel里的滚动。
@@ -225,6 +228,36 @@ public class ShowComponent extends JPanel implements Scrollable {
         if (this.getParent() != null) {
             this.getParent().setVisible(true);
         }
+    }
+
+    public void sortItemByTime() {
+        Collections.sort(this.currentlist.getItems(), new Comparator<Items>() {
+            @Override
+            public int compare(Items o1, Items o2) {
+                return o1.getId() - (o2.getId());
+            }
+        });
+        refreshComponet();
+    }
+
+    public void sortItemByName() {
+        Collections.sort(this.currentlist.getItems(), new Comparator<Items>() {
+            @Override
+            public int compare(Items o1, Items o2) {
+                return o1.getItem_name().compareTo(o2.getItem_name());
+            }
+        });
+        refreshComponet();
+    }
+
+    public void sortItemByCompletion() {
+        Collections.sort(this.currentlist.getItems(), new Comparator<Items>() {
+            @Override
+            public int compare(Items o1, Items o2) {
+                return o1.getItem_deadline().compareTo(o2.getItem_deadline());
+            }
+        });
+        refreshComponet();
     }
 
 

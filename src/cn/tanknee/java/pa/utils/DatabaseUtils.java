@@ -56,20 +56,27 @@ public class DatabaseUtils {
             if (!c.isClosed()) {
                 System.out.println("Succeed");
                 Statement statement = c.createStatement();
-                String createDataBase = "create table " + itemList.getListname() + " (id int not null primary key AUTO_INCREMENT, name varchar(255),type varchar(255),note varchar(255),deadline varchar(255),subtask varchar(255));";
+                String createDataBase = "create table " + itemList.getListname() + " (id int not null primary key AUTO_INCREMENT, name varchar(255),type varchar(255),note varchar(255),deadline varchar(255),isCompleted varchar(255),repeatTime varchar(255),repeatPeriod varchar(255) );";
                 if (!isTableExist(itemList.getListname())) {
                     statement.execute(createDataBase);
                 } else {
                     System.out.println("数据表已存在");
                 }
                 for (Items i : itemList.getItems()) {
-                    String savedata = "insert into " + itemList.getListname() + " values(NULL,?,?,?,?,?);";
+                    String savedata = "insert into " + itemList.getListname() + " values(NULL,?,?,?,?,?,?,?);";
                     PreparedStatement stmt = c.prepareStatement(savedata);
                     stmt.setString(1, i.getItem_name());
                     stmt.setString(2, i.getClassName());
                     stmt.setString(3, i.getItem_note());
                     stmt.setString(4, i.getItem_deadline());
                     stmt.setString(5, i.getItem_name());
+                    if (i instanceof CycleItem) {
+                        stmt.setString(6, String.valueOf(((CycleItem) i).getRepeatTime()));
+                        stmt.setString(7, ((CycleItem) i).getRepeatPeriod());
+                    } else {
+                        stmt.setString(6, "");
+                        stmt.setString(7, "");
+                    }
                     stmt.executeLargeUpdate();
                     stmt.close();
                 }
@@ -86,7 +93,9 @@ public class DatabaseUtils {
     }
 
     /**
+     *
      * @param i
+     * @param showComponent
      */
     public void saveToDatabase(Items i, ShowComponent showComponent) {
         try {
@@ -96,19 +105,26 @@ public class DatabaseUtils {
 
                 System.out.println("Succeed");
                 Statement statement = c.createStatement();
-                String createDataBase = "create table " + showComponent.getCurrentlist().getListname() + " (id int not null primary key AUTO_INCREMENT, name varchar(255),type varchar(255),note varchar(255),deadline varchar(255),subtask varchar(255));";
+                String createDataBase = "create table " + showComponent.getCurrentlist().getListname() + " (id int not null primary key AUTO_INCREMENT, name varchar(255),type varchar(255),note varchar(255),deadline varchar(255),isCompleted varchar(255),repeatTime varchar(255),repeatPeriod varchar(255) );";
                 if (!isTableExist(showComponent.getCurrentlist().getListname())) {
                     statement.execute(createDataBase);
                 } else {
                     System.out.println("数据表已存在");
                 }
-                String savedata = "insert into " + showComponent.getCurrentlist().getListname() + " values(NULL,?,?,?,?,?);";
+                String savedata = "insert into " + showComponent.getCurrentlist().getListname() + " values(NULL,?,?,?,?,?,?,?);";
                 PreparedStatement stmt = c.prepareStatement(savedata);
                 stmt.setString(1, i.getItem_name());
                 stmt.setString(2, i.getClassName());
                 stmt.setString(3, i.getItem_note());
                 stmt.setString(4, i.getItem_deadline());
                 stmt.setString(5, i.getItem_name());
+                if (i instanceof CycleItem) {
+                    stmt.setString(6, String.valueOf(((CycleItem) i).getRepeatTime()));
+                    stmt.setString(7, ((CycleItem) i).getRepeatPeriod());
+                } else {
+                    stmt.setString(6, "");
+                    stmt.setString(7, "");
+                }
                 stmt.executeLargeUpdate();
                 statement.close();
                 stmt.close();
@@ -135,19 +151,26 @@ public class DatabaseUtils {
 
                 System.out.println("Succeed");
                 Statement statement = c.createStatement();
-                String createDataBase = "create table " + itemList.getListname() + " (id int not null primary key AUTO_INCREMENT, name varchar(255),type varchar(255),note varchar(255),deadline varchar(255),subtask varchar(255));";
+                String createDataBase = "create table " + itemList.getListname() + " (id int not null primary key AUTO_INCREMENT, name varchar(255),type varchar(255),note varchar(255),deadline varchar(255),isCompleted varchar(255),repeatTime varchar(255),repeatPeriod varchar(255) );";
                 if (!isTableExist(itemList.getListname())) {
                     statement.execute(createDataBase);
                 } else {
                     System.out.println("数据表已存在");
                 }
-                String savedata = "insert into " + itemList.getListname() + " values(NULL,?,?,?,?,?);";
+                String savedata = "insert into " + itemList.getListname() + " values(NULL,?,?,?,?,?,?,?);";
                 PreparedStatement stmt = c.prepareStatement(savedata);
                 stmt.setString(1, i.getItem_name());
                 stmt.setString(2, i.getClassName());
                 stmt.setString(3, i.getItem_note());
                 stmt.setString(4, i.getItem_deadline());
-                stmt.setString(5, i.getItem_name());
+                stmt.setString(5, i.getComplete().toString());
+                if (i instanceof CycleItem) {
+                    stmt.setString(6, String.valueOf(((CycleItem) i).getRepeatTime()));
+                    stmt.setString(7, ((CycleItem) i).getRepeatPeriod());
+                } else {
+                    stmt.setString(6, "");
+                    stmt.setString(7, "");
+                }
                 stmt.executeLargeUpdate();
                 String getid = "select max(id) from " + itemList.getListname() + " ;";
 
@@ -155,8 +178,6 @@ public class DatabaseUtils {
                 while (resultSet.next()) {
                     i.setId(resultSet.getInt("max(id)"));
                 }
-//                int temp = stmt.getGeneratedKeys().getInt(1);
-//                i.setId(stmt.getGeneratedKeys().getInt(1));
                 statement.close();
                 stmt.close();
             }

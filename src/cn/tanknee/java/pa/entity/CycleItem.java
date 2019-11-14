@@ -29,4 +29,19 @@ public class CycleItem extends Items {
         super(item_name, item_note);
     }
 
+    public int getRepeatTime() {
+        return repeatTime;
+    }
+
+    public void setRepeatTime(int repeatTime) {
+        this.repeatTime = repeatTime;
+    }
+
+    public String getRepeatPeriod() {
+        return repeatPeriod;
+    }
+
+    public void setRepeatPeriod(String repeatPeriod) {
+        this.repeatPeriod = repeatPeriod;
+    }
 }
