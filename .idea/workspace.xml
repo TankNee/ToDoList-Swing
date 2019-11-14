@@ -3,11 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="795dc6ab-3400-4734-833b-a6bcd9420cee" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cn/tanknee/java/pa/component/AddDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/tanknee/java/pa/component/AddDialog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cn/tanknee/java/pa/component/ChangeAndDeleteDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/tanknee/java/pa/component/ChangeAndDeleteDialog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cn/tanknee/java/pa/component/ProjectMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/tanknee/java/pa/component/ProjectMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cn/tanknee/java/pa/component/ShowComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/tanknee/java/pa/component/ShowComponent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cn/tanknee/java/pa/main/MainPart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/tanknee/java/pa/main/MainPart.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -47,6 +42,32 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <excluded-from-favorite>
+      <branch-storage>
+        <map>
+          <entry type="REMOTE">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="origin/master" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </excluded-from-favorite>
+    <favorite-branches>
+      <branch-storage>
+        <map>
+          <entry type="REMOTE">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="gitlab/master" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </favorite-branches>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1SraFswWPjHqeueJ1NWRHpi9wjI" />
@@ -182,7 +203,7 @@
       <workItem from="1573554729593" duration="11511000" />
       <workItem from="1573649997082" duration="4380000" />
       <workItem from="1573713272225" duration="602000" />
-      <workItem from="1573738797620" duration="2619000" />
+      <workItem from="1573738797620" duration="2861000" />
     </task>
     <task id="LOCAL-00001" summary="实现了显示的条例的功能，下一步是画出整个的设计图例。先做好设计。">
       <created>1572449592820</created>
@@ -275,7 +296,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573564145657</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="V1.0.5&#10;开始完善不同类型的任务">
+      <created>1573741531170</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1573741531170</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -323,7 +351,8 @@
     <MESSAGE value="V1.0.4&#10;通过右键菜单的形式实现了任务在列表之间的转移，复制等等" />
     <MESSAGE value="V1.0.4.3&#10;纠正了一些错误。&#10;暂时告一段落，接下来开始复习" />
     <MESSAGE value="V1.0.4.8&#10;纠正了一些错误&#10;开始制作不同的类" />
-    <option name="LAST_COMMIT_MESSAGE" value="V1.0.4.8&#10;纠正了一些错误&#10;开始制作不同的类" />
+    <MESSAGE value="V1.0.5&#10;开始完善不同类型的任务" />
+    <option name="LAST_COMMIT_MESSAGE" value="V1.0.5&#10;开始完善不同类型的任务" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
