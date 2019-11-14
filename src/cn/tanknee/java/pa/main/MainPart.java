@@ -50,7 +50,8 @@ public class MainPart extends JFrame {
         this.add(bottompanel, BorderLayout.SOUTH);
 
         // 顶部的菜单
-        this.setJMenuBar(new ProjectMenu(scrollComponent));
+        ProjectMenu projectMenu = new ProjectMenu(scrollComponent);
+        this.setJMenuBar(projectMenu);
 
         // 传入主界面的指针
         JFrame that = this;
@@ -62,6 +63,7 @@ public class MainPart extends JFrame {
                 Items items = new CycleItem("test", "test");
 //                AddDialog addDialog = new AddDialog(that, "添加", items, ScrollComponent);
                 AddDialog addDialog = new AddDialog(scrollComponent);
+                addDialog.setProjectMenu(projectMenu);
                 addDialog.addItemDialog(that, "Add a Item", items);
             }
         });

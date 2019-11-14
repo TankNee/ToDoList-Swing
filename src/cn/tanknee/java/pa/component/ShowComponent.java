@@ -174,6 +174,18 @@ public class ShowComponent extends JPanel implements Scrollable {
         refreshComponet();
     }
 
+    public void changeList(String listName) {
+        ItemList itemList = null;
+        for (ItemList i : listarray) {
+            if (i.getListname().equals(listName)) {
+                itemList = i;
+                break;
+            }
+        }
+        this.currentlist = itemList;
+        refreshComponet();
+    }
+
     public void refreshComponet() {
         removeAll();
         setLayout(new GridLayout(this.currentlist.getItems().size(), 1, 5, margin));

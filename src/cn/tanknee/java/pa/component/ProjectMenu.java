@@ -187,6 +187,5 @@ public class ProjectMenu extends JMenuBar {
         add(createSortMenu());
         revalidate();
         repaint();
-//        setVisible(true);
     }
 }

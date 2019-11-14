@@ -41,11 +41,11 @@ public class AddDialog extends ItemDialog {
     // 按钮
     private JButton confirm_btn = new JButton("Confirm");
     private JButton cancel_btn = new JButton("Cancel");
-    private JButton enter_sublist = new JButton("Enter");
+    private JButton enter_sublist = new JButton("Create A SubTask List");
     // 条例实例
     private Items items1 = null;
-
-
+    private ProjectMenu projectMenu = null;
+    private JFrame jf;
 
     public AddDialog() {
         super();
@@ -61,6 +61,7 @@ public class AddDialog extends ItemDialog {
 
     public void addItemDialog(JFrame jf, String title, Items items) {
 //        super(jf, title, items);
+        this.jf = jf;
         this.setTitle(title);
         JDialog that = this;
 
@@ -116,6 +117,12 @@ public class AddDialog extends ItemDialog {
                     item_deadline.setText("任务日期");
                     long_item_subtask.setBounds(10, 130, 80, 20);
                     enter_sublist.setBounds(100, long_item_subtask.getY(), 200, 20);
+                    enter_sublist.addActionListener(new ActionListener() {
+                        @Override
+                        public void actionPerformed(ActionEvent e) {
+                            createSubTaskList();
+                        }
+                    });
                     AddDialog.this.add(long_item_subtask);
                     AddDialog.this.add(enter_sublist);
                     AddDialog.this.repaint();
@@ -153,20 +160,28 @@ public class AddDialog extends ItemDialog {
                     default:
                         break;
                 }
-                items1.setItem_name(input_name.getText());
-                items1.setItem_note(input_note.getText());
-                if (!MyStringUtils.isNumber(input_deadline_year.getText()) && !MyStringUtils.isNumber(input_deadline_month.getText()) && !MyStringUtils.isNumber(input_deadline_day.getText())) {
-                    items.setItem_deadline(input_deadline_year.getText() + "-" + input_deadline_month.getText() + "-" + input_deadline_day.getText());
+                if (jComboBox.getSelectedIndex() == -1) {
+                    System.out.println("请选择一个任务类型");
+                    jf.setVisible(true);
+                    dispose();
                 } else {
-                    System.out.println("输入错误");
-                    items.setItem_deadline("2019-11-09");
+                    items1.setItem_name(input_name.getText());
+                    items1.setItem_note(input_note.getText());
+                    if (!MyStringUtils.isNumber(input_deadline_year.getText()) && !MyStringUtils.isNumber(input_deadline_month.getText()) && !MyStringUtils.isNumber(input_deadline_day.getText())) {
+                        items.setItem_deadline(input_deadline_year.getText() + "-" + input_deadline_month.getText() + "-" + input_deadline_day.getText());
+                    } else {
+                        System.out.println("输入错误");
+                        items.setItem_deadline("2019-11-09");
+                    }
+                    showComponent.addNewItem(items1);
+                    DatabaseUtils databaseUtils = new DatabaseUtils();
+                    databaseUtils.saveToDatabase(items1, showComponent);
+                    if (items1 instanceof LongTimeItem) {
+                        createSubTaskList();
+                    }
+                    jf.setVisible(true);
+                    that.dispose();
                 }
-//                items1.setItem_deadline(input_deadline_year.getText() + "-" + input_deadline_month.getText() + "-" + input_deadline_day.getText());
-                showComponent.addNewItem(items1);
-                DatabaseUtils databaseUtils = new DatabaseUtils();
-                databaseUtils.saveToDatabase(items1, showComponent);
-                jf.setVisible(true);
-                that.dispose();
             }
         });
 
@@ -252,5 +267,32 @@ public class AddDialog extends ItemDialog {
         this.add(confirm_btn);
         this.add(cancel_btn);
 
+    }
+
+    public ProjectMenu getProjectMenu() {
+        return projectMenu;
+    }
+
+    public void setProjectMenu(ProjectMenu projectMenu) {
+        this.projectMenu = projectMenu;
+    }
+
+    public void createSubTaskList() {
+        if (!input_name.getText().isEmpty() && !input_note.getText().isEmpty() && !input_deadline_year.getText().isEmpty() && !input_deadline_day.getText().isEmpty() && !input_deadline_month.getText().isEmpty()) {
+            ItemList itemList = new ItemList("subtasklistof" + input_name.getText());
+            showComponent.getListarray().add(itemList);
+            showComponent.setCurrentlist(itemList);
+            DatabaseUtils databaseUtils = new DatabaseUtils();
+            databaseUtils.saveToDatabase(itemList);
+            jf.setVisible(true);
+            AddDialog.this.dispose();
+            projectMenu.refreshMenu();
+            showComponent.refreshComponet();
+
+        } else {
+            System.out.println("请先输入");
+            jf.setVisible(true);
+            AddDialog.this.dispose();
+        }
     }
 }

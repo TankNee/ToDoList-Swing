@@ -16,6 +16,32 @@ import java.util.Calendar;
  */
 public class ChangeAndDeleteDialog extends ItemDialog {
 
+    // 标签
+    private JLabel item_name = new JLabel("任务名称");
+    private JLabel item_note = new JLabel("任务备注");
+    private JLabel item_deadline = new JLabel("任务日期");
+    private JLabel item_deadline_yaer = new JLabel("年");
+    private JLabel item_deadline_month = new JLabel("月");
+    private JLabel item_deadline_day = new JLabel("日");
+    private JLabel cycle_item_repeat = new JLabel("重复");
+    private JLabel long_item_subtask = new JLabel("子任务清单");
+
+    // 文本输入框
+    private JTextField input_name = new JTextField();
+    private JTextField input_note = new JTextField();
+    private JTextField input_deadline_year = new JTextField();
+    private JTextField input_deadline_month = new JTextField();
+    private JTextField input_deadline_day = new JTextField();
+    private JTextField input_cycle_item_repeat = new JTextField();
+    // 按钮
+    private JButton confirm_btn = new JButton("Confirm");
+    private JButton cancel_btn = new JButton("Cancel");
+    private JButton enter_sublist = new JButton("Enter The SubTask List");
+    // 条例实例
+    private Items items1 = null;
+    private ProjectMenu projectMenu = null;
+    private JFrame jf;
+
     public ChangeAndDeleteDialog(JFrame jf, String title, Items items, ShowComponent showComponent) {
         super(jf, title, items);
         JDialog that = this;
@@ -23,39 +49,27 @@ public class ChangeAndDeleteDialog extends ItemDialog {
          * 各组件： 标签，按钮
          */
         //标签
-        JLabel item_name = new JLabel("任务名称");
         item_name.setBounds(10, 10, 80, 20);
-        JLabel item_note = new JLabel("任务备注");
         item_note.setBounds(10, 40, 80, 20);
-        JLabel item_deadline = new JLabel("任务日期");
         item_deadline.setBounds(10, 70, 80, 20);
-        JLabel item_deadline_yaer = new JLabel("年");
         item_deadline_yaer.setBounds(140, 70, 27, 20);
-        JLabel item_deadline_month = new JLabel("月");
         item_deadline_month.setBounds(207, 70, 27, 20);
-        JLabel item_deadline_day = new JLabel("日");
         item_deadline_day.setBounds(274, 70, 27, 20);
         JLabel item_complete = new JLabel("完成");
         item_complete.setBounds(10, 100, 80, 20);
 
 
         //文本输入框
-        JTextField input_name = new JTextField();
         input_name.setBounds(100, item_name.getY(), 200, 20);
         input_name.setText(items.getItem_name());
-        JTextField input_note = new JTextField();
         input_note.setBounds(100, item_note.getY(), 200, 20);
         input_note.setText(items.getItem_note());
-//        JTextField input_deadline = new JTextField();
-//        input_deadline.setBounds(100, item_deadline.getY(), 200, 20);
-//        input_deadline.setText(items.getItem_deadline());
         JRadioButton completeButton = new JRadioButton();
         completeButton.setBounds(100, 100, 20, 20);
         completeButton.setSelected(items.getComplete());
         completeButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.println(completeButton.isSelected());
                 items.setComplete(completeButton.isSelected());
             }
         });
@@ -73,19 +87,45 @@ public class ChangeAndDeleteDialog extends ItemDialog {
             pe.printStackTrace();
         }
 
-        JTextField input_deadline_year = new JTextField();
         input_deadline_year.setBounds(100, item_deadline.getY(), 40, 20);
         input_deadline_year.setText(String.valueOf(c.get(Calendar.YEAR)));
-        JTextField input_deadline_month = new JTextField();
         input_deadline_month.setBounds(167, item_deadline.getY(), 40, 20);
         input_deadline_month.setText(String.valueOf(c.get(Calendar.MONTH) + 1));
-        JTextField input_deadline_day = new JTextField();
         input_deadline_day.setBounds(234, item_deadline.getY(), 40, 20);
         input_deadline_day.setText(String.valueOf(c.get(Calendar.DAY_OF_MONTH)));
+        /**
+         * 根据不同的条例类型进行不同的显示
+         */
 
+        if (items instanceof ShortItem) {
+
+        } else if (items instanceof LongTimeItem) {
+            long_item_subtask.setBounds(10, 130, 80, 20);
+            enter_sublist.setBounds(100, long_item_subtask.getY(), 200, 20);
+            enter_sublist.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    DatabaseUtils databaseUtils = new DatabaseUtils();
+                    if (databaseUtils.isTableExist("subtasklistof" + input_name.getText())) {
+                        showComponent.changeList("subtasklistof" + input_name.getText());
+                    } else {
+                        System.out.println("数据表不存在");
+                    }
+
+                    ChangeAndDeleteDialog.this.dispose();
+                }
+            });
+            this.add(long_item_subtask);
+            this.add(enter_sublist);
+        } else if (items instanceof CycleItem) {
+            cycle_item_repeat.setBounds(10, 130, 80, 20);
+            input_cycle_item_repeat.setBounds(100, cycle_item_repeat.getY(), 200, 20);
+            item_deadline.setText("执行日期");
+            this.add(cycle_item_repeat);
+            this.add(input_cycle_item_repeat);
+        }
 
         // 确认,删除与取消按钮
-        JButton confirm_btn = new JButton("Confirm");
         confirm_btn.setBounds(input_name.getX() + input_name.getWidth() + 30, item_name.getY(), 100, 20);
         confirm_btn.addActionListener(new ActionListener() {
             @Override
@@ -114,7 +154,6 @@ public class ChangeAndDeleteDialog extends ItemDialog {
                 that.dispose();
             }
         });
-        JButton cancel_btn = new JButton("Cancel");
         cancel_btn.setBounds(input_name.getX() + input_name.getWidth() + 30, item_deadline.getY(), 100, 20);
         cancel_btn.addActionListener(new ActionListener() {
             @Override
