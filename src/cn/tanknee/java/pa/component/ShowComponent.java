@@ -33,7 +33,7 @@ public class ShowComponent extends JPanel implements Scrollable {
      */
     private DatabaseUtils databaseUtils = new DatabaseUtils();
 
-
+    private ProjectMenu projectMenu = null;
     public ArrayList<ItemList> getListarray() {
         return listarray;
     }
@@ -152,19 +152,6 @@ public class ShowComponent extends JPanel implements Scrollable {
 
     public void changeItem(Items items) {
         databaseUtils.changeItemFromDatabase(items, this.currentlist.getListname());
-//        removeAll();
-//        int index = 0;
-//        for(Items i:this.currentlist.getItems()){
-//            if(i.equals(items)){
-//                break;
-//            }
-//            index++;
-//        }
-        /**
-         * TODO 在这里实现修改任务排列位置的功能
-         * TODO 大体思路：获取目标位置的index，记住当前位置的index
-         * TODO 然后通过不断地交换来实现位置的转移，最后刷新整个容器界面
-         */
         refreshComponet();
     }
 
@@ -258,6 +245,10 @@ public class ShowComponent extends JPanel implements Scrollable {
             }
         });
         refreshComponet();
+    }
+
+    public void setProjectMenu(ProjectMenu projectMenu) {
+        this.projectMenu = projectMenu;
     }
 
 

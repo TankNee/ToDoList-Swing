@@ -52,7 +52,7 @@ public class MainPart extends JFrame {
         // 顶部的菜单
         ProjectMenu projectMenu = new ProjectMenu(scrollComponent);
         this.setJMenuBar(projectMenu);
-
+        scrollComponent.setProjectMenu(projectMenu);
         // 传入主界面的指针
         JFrame that = this;
 

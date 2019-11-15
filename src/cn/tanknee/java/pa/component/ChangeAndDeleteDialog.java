@@ -24,6 +24,7 @@ public class ChangeAndDeleteDialog extends ItemDialog {
     private JLabel item_deadline_month = new JLabel("月");
     private JLabel item_deadline_day = new JLabel("日");
     private JLabel cycle_item_repeat = new JLabel("重复");
+    private JLabel cycle_item_repeat_period = new JLabel("周期");
     private JLabel long_item_subtask = new JLabel("子任务清单");
 
     // 文本输入框
@@ -33,6 +34,7 @@ public class ChangeAndDeleteDialog extends ItemDialog {
     private JTextField input_deadline_month = new JTextField();
     private JTextField input_deadline_day = new JTextField();
     private JTextField input_cycle_item_repeat = new JTextField();
+    private JTextField input_cycle_item_repeat_period = new JTextField();
     // 按钮
     private JButton confirm_btn = new JButton("Confirm");
     private JButton cancel_btn = new JButton("Cancel");
@@ -109,7 +111,15 @@ public class ChangeAndDeleteDialog extends ItemDialog {
                     if (databaseUtils.isTableExist("subtasklistof" + input_name.getText())) {
                         showComponent.changeList("subtasklistof" + input_name.getText());
                     } else {
-                        System.out.println("数据表不存在");
+                        ItemList itemList = new ItemList("subtasklistof" + input_name.getText());
+                        showComponent.getListarray().add(itemList);
+                        showComponent.setCurrentlist(itemList);
+                        databaseUtils.saveToDatabase(itemList);
+                        jf.setVisible(true);
+                        ChangeAndDeleteDialog.this.dispose();
+//                        projectMenu.refreshMenu();
+                        showComponent.refreshComponet();
+//                        System.out.println("数据表不存在");
                     }
 
                     ChangeAndDeleteDialog.this.dispose();
@@ -119,8 +129,14 @@ public class ChangeAndDeleteDialog extends ItemDialog {
             this.add(enter_sublist);
         } else if (items instanceof CycleItem) {
             cycle_item_repeat.setBounds(10, 130, 80, 20);
-            input_cycle_item_repeat.setBounds(100, cycle_item_repeat.getY(), 200, 20);
+            input_cycle_item_repeat.setBounds(100, cycle_item_repeat.getY(), 70, 20);
+            input_cycle_item_repeat.setText(String.valueOf(((CycleItem) items).getRepeatTime()));
+            cycle_item_repeat_period.setBounds(200, cycle_item_repeat.getY(), 40, 20);
+            input_cycle_item_repeat_period.setBounds(260, cycle_item_repeat.getY(), 40, 20);
+            input_cycle_item_repeat_period.setText(((CycleItem) items).getRepeatPeriod());
             item_deadline.setText("执行日期");
+            this.add(cycle_item_repeat_period);
+            this.add(input_cycle_item_repeat_period);
             this.add(cycle_item_repeat);
             this.add(input_cycle_item_repeat);
         }
@@ -136,6 +152,10 @@ public class ChangeAndDeleteDialog extends ItemDialog {
                     items.setItem_deadline(input_deadline_year.getText() + "-" + input_deadline_month.getText() + "-" + input_deadline_day.getText());
                 } else {
                     items.setItem_deadline("2019-11-09");
+                }
+                if (items instanceof CycleItem) {
+                    ((CycleItem) items).setRepeatTime(Integer.parseInt(input_cycle_item_repeat.getText()));
+                    ((CycleItem) items).setRepeatPeriod(input_cycle_item_repeat_period.getText());
                 }
                 showComponent.changeItem(items);
 //                showComponent.refreshComponet();

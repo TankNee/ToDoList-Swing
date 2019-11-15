@@ -29,6 +29,7 @@ public class AddDialog extends ItemDialog {
     private JLabel item_deadline_month = new JLabel("月");
     private JLabel item_deadline_day = new JLabel("日");
     private JLabel cycle_item_repeat = new JLabel("重复");
+    private JLabel cycle_item_repeat_period = new JLabel("周期");
     private JLabel long_item_subtask = new JLabel("子任务清单");
 
     // 文本输入框
@@ -38,6 +39,7 @@ public class AddDialog extends ItemDialog {
     private JTextField input_deadline_month = new JTextField();
     private JTextField input_deadline_day = new JTextField();
     private JTextField input_cycle_item_repeat = new JTextField();
+    private JTextField input_cycle_item_repeat_period = new JTextField();
     // 按钮
     private JButton confirm_btn = new JButton("Confirm");
     private JButton cancel_btn = new JButton("Cancel");
@@ -130,8 +132,12 @@ public class AddDialog extends ItemDialog {
                     AddDialog.this.remove(long_item_subtask);
                     AddDialog.this.remove(enter_sublist);
                     cycle_item_repeat.setBounds(10, 130, 80, 20);
-                    input_cycle_item_repeat.setBounds(100, cycle_item_repeat.getY(), 200, 20);
+                    input_cycle_item_repeat.setBounds(100, cycle_item_repeat.getY(), 70, 20);
+                    cycle_item_repeat_period.setBounds(200, cycle_item_repeat.getY(), 40, 20);
+                    input_cycle_item_repeat_period.setBounds(260, cycle_item_repeat.getY(), 40, 20);
                     item_deadline.setText("执行日期");
+                    AddDialog.this.add(cycle_item_repeat_period);
+                    AddDialog.this.add(input_cycle_item_repeat_period);
                     AddDialog.this.add(cycle_item_repeat);
                     AddDialog.this.add(input_cycle_item_repeat);
                     AddDialog.this.repaint();
@@ -167,18 +173,22 @@ public class AddDialog extends ItemDialog {
                 } else {
                     items1.setItem_name(input_name.getText());
                     items1.setItem_note(input_note.getText());
-                    if (!MyStringUtils.isNumber(input_deadline_year.getText()) && !MyStringUtils.isNumber(input_deadline_month.getText()) && !MyStringUtils.isNumber(input_deadline_day.getText())) {
+                    if (MyStringUtils.isNumber(input_deadline_year.getText()) && MyStringUtils.isNumber(input_deadline_month.getText()) && MyStringUtils.isNumber(input_deadline_day.getText())) {
                         items.setItem_deadline(input_deadline_year.getText() + "-" + input_deadline_month.getText() + "-" + input_deadline_day.getText());
                     } else {
                         System.out.println("输入错误");
                         items.setItem_deadline("2019-11-09");
                     }
+                    items.setComplete(false);
+                    if (items1 instanceof LongTimeItem) {
+                        createSubTaskList();
+                    } else if (items1 instanceof CycleItem) {
+                        ((CycleItem) items1).setRepeatTime(Integer.parseInt(input_cycle_item_repeat.getText()));
+                    }
                     showComponent.addNewItem(items1);
                     DatabaseUtils databaseUtils = new DatabaseUtils();
                     databaseUtils.saveToDatabase(items1, showComponent);
-                    if (items1 instanceof LongTimeItem) {
-                        createSubTaskList();
-                    }
+
                     jf.setVisible(true);
                     that.dispose();
                 }
@@ -281,7 +291,7 @@ public class AddDialog extends ItemDialog {
         if (!input_name.getText().isEmpty() && !input_note.getText().isEmpty() && !input_deadline_year.getText().isEmpty() && !input_deadline_day.getText().isEmpty() && !input_deadline_month.getText().isEmpty()) {
             ItemList itemList = new ItemList("subtasklistof" + input_name.getText());
             showComponent.getListarray().add(itemList);
-            showComponent.setCurrentlist(itemList);
+//            showComponent.setCurrentlist(itemList);
             DatabaseUtils databaseUtils = new DatabaseUtils();
             databaseUtils.saveToDatabase(itemList);
             jf.setVisible(true);

@@ -69,7 +69,7 @@ public class DatabaseUtils {
                     stmt.setString(2, i.getClassName());
                     stmt.setString(3, i.getItem_note());
                     stmt.setString(4, i.getItem_deadline());
-                    stmt.setString(5, i.getItem_name());
+                    stmt.setString(5, i.getComplete().toString());
                     if (i instanceof CycleItem) {
                         stmt.setString(6, String.valueOf(((CycleItem) i).getRepeatTime()));
                         stmt.setString(7, ((CycleItem) i).getRepeatPeriod());
@@ -117,7 +117,7 @@ public class DatabaseUtils {
                 stmt.setString(2, i.getClassName());
                 stmt.setString(3, i.getItem_note());
                 stmt.setString(4, i.getItem_deadline());
-                stmt.setString(5, i.getItem_name());
+                stmt.setString(5, i.getComplete().toString());
                 if (i instanceof CycleItem) {
                     stmt.setString(6, String.valueOf(((CycleItem) i).getRepeatTime()));
                     stmt.setString(7, ((CycleItem) i).getRepeatPeriod());
@@ -252,6 +252,15 @@ public class DatabaseUtils {
                     items.setItem_name(rs2.getString("name"));
                     items.setItem_note(rs2.getString("note"));
                     items.setItem_deadline(rs2.getString("deadline"));
+                    if (rs2.getString("isCompleted").equals("true")) {
+                        items.setComplete(true);
+                    } else {
+                        items.setComplete(false);
+                    }
+                    if (items instanceof CycleItem) {
+                        ((CycleItem) items).setRepeatTime(Integer.parseInt(rs2.getString("repeatTime")));
+                        ((CycleItem) items).setRepeatPeriod(rs2.getString("repeatPeriod"));
+                    }
                     items.setId(rs2.getInt("id"));
                     System.out.println(items.getId());
                     itemList.add(items);
@@ -294,12 +303,20 @@ public class DatabaseUtils {
         try {
             Class.forName(driver);
             Connection c = DriverManager.getConnection(url, user, password);
-            String updatesql = "update  " + tablename + " set name =?, note=?, deadline=? where id = ?";
+            String updatesql = "update  " + tablename + " set name =?, note=?, deadline=?,isCompleted=?,repeatTime=?,repeatPeriod=? where id = ?";
             PreparedStatement stmt = c.prepareStatement(updatesql);
             stmt.setString(1, items.getItem_name());
             stmt.setString(2, items.getItem_note());
             stmt.setString(3, items.getItem_deadline());
-            stmt.setInt(4, items.getId());
+            stmt.setString(4, items.getComplete().toString());
+            stmt.setInt(7, items.getId());
+            if (items instanceof CycleItem) {
+                stmt.setString(5, String.valueOf(((CycleItem) items).getRepeatTime()));
+                stmt.setString(6, ((CycleItem) items).getRepeatPeriod());
+            } else {
+                stmt.setString(5, "");
+                stmt.setString(6, "");
+            }
             stmt.executeLargeUpdate();
             stmt.close();
             c.close();

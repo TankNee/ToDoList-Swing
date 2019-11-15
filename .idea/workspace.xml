@@ -3,9 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="795dc6ab-3400-4734-833b-a6bcd9420cee" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cn/tanknee/java/pa/component/ProjectMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/tanknee/java/pa/component/ProjectMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cn/tanknee/java/pa/component/AddDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/tanknee/java/pa/component/AddDialog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cn/tanknee/java/pa/component/ChangeAndDeleteDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/tanknee/java/pa/component/ChangeAndDeleteDialog.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/cn/tanknee/java/pa/component/ShowComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/tanknee/java/pa/component/ShowComponent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cn/tanknee/java/pa/entity/CycleItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/tanknee/java/pa/entity/CycleItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cn/tanknee/java/pa/main/MainPart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/tanknee/java/pa/main/MainPart.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/cn/tanknee/java/pa/utils/DatabaseUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/tanknee/java/pa/utils/DatabaseUtils.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -202,7 +203,8 @@
       <workItem from="1573554729593" duration="11511000" />
       <workItem from="1573649997082" duration="4380000" />
       <workItem from="1573713272225" duration="602000" />
-      <workItem from="1573738797620" duration="7629000" />
+      <workItem from="1573738797620" duration="8252000" />
+      <workItem from="1573794479085" duration="3242000" />
     </task>
     <task id="LOCAL-00001" summary="实现了显示的条例的功能，下一步是画出整个的设计图例。先做好设计。">
       <created>1572449592820</created>
@@ -302,7 +304,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573741531170</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="V1.0.6&#10;还差一个数据存储的功能实现">
+      <created>1573746977214</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1573746977214</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -335,6 +344,31 @@
         </entry>
       </map>
     </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="master" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="HEAD" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="gitlab/master" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
@@ -351,20 +385,13 @@
     <MESSAGE value="V1.0.4.3&#10;纠正了一些错误。&#10;暂时告一段落，接下来开始复习" />
     <MESSAGE value="V1.0.4.8&#10;纠正了一些错误&#10;开始制作不同的类" />
     <MESSAGE value="V1.0.5&#10;开始完善不同类型的任务" />
-    <option name="LAST_COMMIT_MESSAGE" value="V1.0.5&#10;开始完善不同类型的任务" />
+    <MESSAGE value="V1.0.6&#10;还差一个数据存储的功能实现" />
+    <option name="LAST_COMMIT_MESSAGE" value="V1.0.6&#10;还差一个数据存储的功能实现" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/cn/tanknee/java/pa/component/AddDialog.java</url>
-          <line>61</line>
-          <properties class="cn.tanknee.java.pa.component.AddDialog" method="addItemDialog">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/cn/tanknee/java/pa/utils/DatabaseUtils.java</url>
           <line>114</line>
