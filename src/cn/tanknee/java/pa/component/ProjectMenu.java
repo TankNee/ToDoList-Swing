@@ -105,16 +105,17 @@ public class ProjectMenu extends JMenuBar {
         JMenu listMenu = new JMenu("LIST");
         listMenu.setMnemonic(KeyEvent.VK_L);
         for (ItemList itemList : showComponent.getListarray()) {
-            JMenuItem item = new JMenuItem(itemList.getListname());
-            item.addActionListener(new ActionListener() {
-                @Override
-                public void actionPerformed(ActionEvent e) {
-                    showComponent.changeList(itemList);
+            if (!itemList.getListname().contains("subtasklist")) {
+                JMenuItem item = new JMenuItem(itemList.getListname());
+                item.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        showComponent.changeList(itemList);
 
-                }
-            });
-            listMenu.add(item);
-
+                    }
+                });
+                listMenu.add(item);
+            }
         }
         return listMenu;
     }
@@ -129,17 +130,14 @@ public class ProjectMenu extends JMenuBar {
         sortMenu.setMnemonic(KeyEvent.VK_S);
 
         JMenu sortList = new JMenu("Sort List");
-        JMenuItem sortListByTime = new JMenuItem("Sort List By Time");
+        JMenuItem sortListByTime = new JMenuItem("Sort List By Name Reverse");
         sortListByTime.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 /**
                  * 暂时还未想好怎么排序。
                  */
-//                Items[] items = showComponent.getCurrentlistArray();
-//                Arrays.sort(items);
-//                showComponent.setCurrentlistByArray(items);
-//                showComponent.refreshComponet();
+                showComponent.sortListByTime(false);
                 refreshMenu();
             }
         });
@@ -147,20 +145,21 @@ public class ProjectMenu extends JMenuBar {
         sortListByName.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String[] listname = new String[showComponent.getListarray().size()];
-                for (int i = 0; i < listname.length; i++) {
-                    listname[i] = showComponent.getListarray().get(i).getListname();
-                }
-                Arrays.sort(listname);
-                ArrayList<ItemList> al = new ArrayList<>();
-                for (int i = 0; i < listname.length; i++) {
-                    for (ItemList itemList : showComponent.getListarray()) {
-                        if (itemList.getListname().equals(listname[i])) {
-                            al.add(itemList);
-                        }
-                    }
-                }
-                showComponent.setListarray(al);
+                showComponent.sortListByTime(true);
+//                String[] listname = new String[showComponent.getListarray().size()];
+//                for (int i = 0; i < listname.length; i++) {
+//                    listname[i] = showComponent.getListarray().get(i).getListname();
+//                }
+//                Arrays.sort(listname);
+//                ArrayList<ItemList> al = new ArrayList<>();
+//                for (int i = 0; i < listname.length; i++) {
+//                    for (ItemList itemList : showComponent.getListarray()) {
+//                        if (itemList.getListname().equals(listname[i])) {
+//                            al.add(itemList);
+//                        }
+//                    }
+//                }
+//                showComponent.setListarray(al);
                 refreshMenu();
             }
         });

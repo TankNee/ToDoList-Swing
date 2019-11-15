@@ -217,6 +217,25 @@ public class ShowComponent extends JPanel implements Scrollable {
         }
     }
 
+    public void sortListByTime(Boolean b) {
+        if (b) {
+            Collections.sort(this.listarray, new Comparator<ItemList>() {
+                @Override
+                public int compare(ItemList o1, ItemList o2) {
+                    return o1.getListname().compareTo(o2.getListname());
+                }
+            });
+        } else {
+            Collections.sort(this.listarray, new Comparator<ItemList>() {
+                @Override
+                public int compare(ItemList o1, ItemList o2) {
+                    return -o1.getListname().compareTo(o2.getListname());
+                }
+            });
+        }
+
+    }
+
     public void sortItemByTime() {
         Collections.sort(this.currentlist.getItems(), new Comparator<Items>() {
             @Override

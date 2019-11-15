@@ -60,11 +60,11 @@ public class MainPart extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 System.out.println("H");
-                Items items = new CycleItem("test", "test");
+                Items items = null;
 //                AddDialog addDialog = new AddDialog(that, "添加", items, ScrollComponent);
                 AddDialog addDialog = new AddDialog(scrollComponent);
                 addDialog.setProjectMenu(projectMenu);
-                addDialog.addItemDialog(that, "Add a Item", items);
+                addDialog.addItemDialog(that, "Add a Item");
             }
         });
     }

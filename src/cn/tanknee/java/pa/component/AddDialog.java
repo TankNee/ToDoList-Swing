@@ -61,7 +61,7 @@ public class AddDialog extends ItemDialog {
         super(jf, title);
     }
 
-    public void addItemDialog(JFrame jf, String title, Items items) {
+    public void addItemDialog(JFrame jf, String title) {
 //        super(jf, title, items);
         this.jf = jf;
         this.setTitle(title);
@@ -155,7 +155,6 @@ public class AddDialog extends ItemDialog {
                 switch (jComboBox.getSelectedIndex()) {
                     case 1:
                         items1 = new LongTimeItem();
-                        ((LongTimeItem) items1).test();
                         break;
                     case 0:
                         items1 = new ShortItem();
@@ -174,16 +173,17 @@ public class AddDialog extends ItemDialog {
                     items1.setItem_name(input_name.getText());
                     items1.setItem_note(input_note.getText());
                     if (MyStringUtils.isNumber(input_deadline_year.getText()) && MyStringUtils.isNumber(input_deadline_month.getText()) && MyStringUtils.isNumber(input_deadline_day.getText())) {
-                        items.setItem_deadline(input_deadline_year.getText() + "-" + input_deadline_month.getText() + "-" + input_deadline_day.getText());
+                        items1.setItem_deadline(input_deadline_year.getText() + "-" + input_deadline_month.getText() + "-" + input_deadline_day.getText());
                     } else {
                         System.out.println("输入错误");
-                        items.setItem_deadline("2019-11-09");
+                        items1.setItem_deadline("2019-11-09");
                     }
-                    items.setComplete(false);
+                    items1.setComplete(false);
                     if (items1 instanceof LongTimeItem) {
                         createSubTaskList();
                     } else if (items1 instanceof CycleItem) {
                         ((CycleItem) items1).setRepeatTime(Integer.parseInt(input_cycle_item_repeat.getText()));
+                        ((CycleItem) items1).setRepeatPeriod(input_cycle_item_repeat_period.getText());
                     }
                     showComponent.addNewItem(items1);
                     DatabaseUtils databaseUtils = new DatabaseUtils();
