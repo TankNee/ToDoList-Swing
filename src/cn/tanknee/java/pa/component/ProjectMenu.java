@@ -130,14 +130,11 @@ public class ProjectMenu extends JMenuBar {
         sortMenu.setMnemonic(KeyEvent.VK_S);
 
         JMenu sortList = new JMenu("Sort List");
-        JMenuItem sortListByTime = new JMenuItem("Sort List By Name Reverse");
+        JMenuItem sortListByTime = new JMenuItem("Sort List By Tasks Number");
         sortListByTime.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                /**
-                 * 暂时还未想好怎么排序。
-                 */
-                showComponent.sortListByTime(false);
+                showComponent.sortListByTasksNoumber();
                 refreshMenu();
             }
         });
