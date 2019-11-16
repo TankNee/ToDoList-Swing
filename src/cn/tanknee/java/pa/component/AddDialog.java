@@ -89,9 +89,7 @@ public class AddDialog extends ItemDialog {
         input_deadline_month.setBounds(167, item_deadline.getY(), 40, 20);
         input_deadline_day.setBounds(234, item_deadline.getY(), 40, 20);
 
-        // 日历组件
-        DateField dateField = new DateField();
-        dateField.setBounds(100, item_deadline.getY(), 200, 20);
+
         // 子清单操作按钮
         enter_sublist.addActionListener(new ActionListener() {
             @Override
