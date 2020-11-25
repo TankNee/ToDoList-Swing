@@ -2,9 +2,43 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="795dc6ab-3400-4734-833b-a6bcd9420cee" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/UML/个人助理类UML类图.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/UML/个人助理类UML类图.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/mysql_mysql_connector_java_5_1_48.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/mysql_mysql_connector_java_5_1_48.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/launch.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vscode/launch.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UML/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/UML/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UML/用例描述.md" beforeDir="false" afterPath="$PROJECT_DIR$/UML/用例描述.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/personalagency/META-INF/personalagency.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/personalagency.iml" beforeDir="false" afterPath="$PROJECT_DIR$/personalagency.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MainWindow.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainWindow.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MainWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cn/tanknee/java/pa/component/AddDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/tanknee/java/pa/component/AddDialog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cn/tanknee/java/pa/component/ChangeAndDeleteDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/tanknee/java/pa/component/ChangeAndDeleteDialog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cn/tanknee/java/pa/component/ItemDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/tanknee/java/pa/component/ItemDialog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cn/tanknee/java/pa/component/ItemMoudle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/tanknee/java/pa/component/ItemMoudle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cn/tanknee/java/pa/component/ProjectMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/tanknee/java/pa/component/ProjectMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cn/tanknee/java/pa/component/RightMouseMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/tanknee/java/pa/component/RightMouseMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cn/tanknee/java/pa/component/SearchDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/tanknee/java/pa/component/SearchDialog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cn/tanknee/java/pa/component/ShowComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/tanknee/java/pa/component/ShowComponent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cn/tanknee/java/pa/entity/CycleItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/tanknee/java/pa/entity/CycleItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cn/tanknee/java/pa/entity/ItemList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/tanknee/java/pa/entity/ItemList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cn/tanknee/java/pa/entity/Items.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/tanknee/java/pa/entity/Items.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cn/tanknee/java/pa/entity/LongTimeItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/tanknee/java/pa/entity/LongTimeItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cn/tanknee/java/pa/entity/ShortItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/tanknee/java/pa/entity/ShortItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cn/tanknee/java/pa/main/MainPart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/tanknee/java/pa/main/MainPart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cn/tanknee/java/pa/utils/DatabaseUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/tanknee/java/pa/utils/DatabaseUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cn/tanknee/java/pa/utils/MyStringUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/tanknee/java/pa/utils/MyStringUtils.java" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -66,8 +100,10 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1SraFswWPjHqeueJ1NWRHpi9wjI" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="2" id="Add" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
@@ -76,6 +112,7 @@
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH" value="237" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -99,19 +136,7 @@
       <recent name="D:\huaweicloud\personalagency\src\cn\tanknee\peasonalagency" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="RunManager" selected="Application.runner">
+  <component name="RunManager" selected="应用程序.runner">
     <configuration name="MainWindow" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="MainWindow" />
       <module name="personalagency" />
@@ -140,38 +165,32 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
-      <item itemvalue="Application.runner" />
-      <item itemvalue="Application.SqlTest" />
-      <item itemvalue="Application.rightmenu" />
-      <item itemvalue="Application.MainWindow" />
+      <item itemvalue="应用程序.SqlTest" />
+      <item itemvalue="应用程序.rightmenu" />
+      <item itemvalue="应用程序.runner" />
+      <item itemvalue="应用程序.MainWindow" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.MainWindow" />
+        <item itemvalue="应用程序.MainWindow" />
       </list>
     </recent_temporary>
   </component>
-  <component name="ServiceViewManager">
-    <option name="allServicesViewState">
-      <serviceView>
-        <treeState>
-          <expand>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@3d09f9ea" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-            </path>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@3d09f9ea" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@54d88e24" type="9fbbdea:ServiceModel$ServiceNode" />
-            </path>
-          </expand>
-          <select />
-        </treeState>
-      </serviceView>
-    </option>
-  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -201,6 +220,10 @@
       <workItem from="1573738797620" duration="8252000" />
       <workItem from="1573794479085" duration="7107000" />
       <workItem from="1573902991459" duration="5784000" />
+      <workItem from="1574063594149" duration="29000" />
+      <workItem from="1574071535004" duration="2580000" />
+      <workItem from="1606313918527" duration="778000" />
+      <workItem from="1606315418150" duration="457000" />
     </task>
     <task id="LOCAL-00001" summary="实现了显示的条例的功能，下一步是画出整个的设计图例。先做好设计。">
       <created>1572449592820</created>
@@ -339,7 +362,7 @@
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.History.Properties">
     <option name="COLUMN_ORDER">
@@ -361,9 +384,7 @@
         </entry>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
@@ -393,6 +414,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
@@ -417,14 +439,27 @@
     <option name="LAST_COMMIT_MESSAGE" value="V1.0.9.5&#10;修改了任务清单的排序方式" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
+  <component name="WindowStateProjectService">
+    <state width="1878" height="264" key="GridCell.Tab.0.bottom" timestamp="1606315459988">
+      <screen x="0" y="23" width="1920" height="977" />
+    </state>
+    <state width="1878" height="264" key="GridCell.Tab.0.bottom/-1680.23.1680.922/0.23.1920.977@0.23.1920.977" timestamp="1606315459988" />
+    <state width="1878" height="264" key="GridCell.Tab.0.center" timestamp="1606315459987">
+      <screen x="0" y="23" width="1920" height="977" />
+    </state>
+    <state width="1878" height="264" key="GridCell.Tab.0.center/-1680.23.1680.922/0.23.1920.977@0.23.1920.977" timestamp="1606315459987" />
+    <state width="1878" height="264" key="GridCell.Tab.0.left" timestamp="1606315459987">
+      <screen x="0" y="23" width="1920" height="977" />
+    </state>
+    <state width="1878" height="264" key="GridCell.Tab.0.left/-1680.23.1680.922/0.23.1920.977@0.23.1920.977" timestamp="1606315459987" />
+    <state width="1878" height="264" key="GridCell.Tab.0.right" timestamp="1606315459988">
+      <screen x="0" y="23" width="1920" height="977" />
+    </state>
+    <state width="1878" height="264" key="GridCell.Tab.0.right/-1680.23.1680.922/0.23.1920.977@0.23.1920.977" timestamp="1606315459988" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/cn/tanknee/java/pa/utils/DatabaseUtils.java</url>
-          <line>114</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/cn/tanknee/java/pa/component/AddDialog.java</url>
           <line>171</line>

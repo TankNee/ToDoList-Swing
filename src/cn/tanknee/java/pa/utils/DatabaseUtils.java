@@ -9,11 +9,10 @@ import java.util.ArrayList;
 
 public class DatabaseUtils {
     private static String driver = "com.mysql.jdbc.Driver";
-    private static String url_cloud = "jdbc:MySQL://47.102.45.176:3306/personalagency?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=UTC";
     private static String url = "jdbc:MySQL://localhost:3306/personalagency?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=UTC";
-    private static String user_cloud = "personalagency";
     private static String user = "root";
-    private static String password = "451000";
+    // TODO: Input your database password
+    private static String password = "password";
 
     public static void main(String[] args) {
         String driver = "com.mysql.jdbc.Driver";
